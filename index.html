@@ -161,6 +161,7 @@ MathJax = {
   .card-scene {
     perspective: 900px; width: 100%; height: 300px;
     cursor: pointer; -webkit-tap-highlight-color: transparent;
+    position: relative; z-index: 0; overflow: hidden;
   }
 
   .card {
@@ -248,21 +249,26 @@ MathJax = {
 
   .rationale.visible { display: block; }
 
-  .quiz-hint-btn {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 0.8rem; color: var(--accent); background: none;
-    border: 1px dashed var(--border); border-radius: 8px;
-    padding: 0.45rem 0.9rem; cursor: pointer;
-    transition: border-color 0.15s;
+  .hint-box {
+    background: var(--accent-light); border: 1px solid var(--accent);
+    border-radius: 10px; padding: 0.75rem 1rem;
+    display: none;
   }
 
-  .quiz-hint-btn:hover { border-color: var(--accent); }
-  .quiz-hint-btn:disabled { opacity: 0.4; cursor: default; }
+  .hint-box.visible { display: block; }
+
+  .quiz-hint-btn {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.82rem; color: var(--accent); background: none;
+    border: none; cursor: pointer; font-weight: 500;
+    padding: 0;
+  }
+
+  .quiz-hint-btn:hover { text-decoration: underline; }
 
   .quiz-hint-text {
-    font-size: 0.82rem; color: var(--text-muted);
-    margin-top: 0.5rem; font-style: italic;
-    line-height: 1.5; display: none;
+    font-size: 0.85rem; color: var(--surface-back);
+    margin-top: 0.4rem; line-height: 1.5; display: none;
   }
 
   .quiz-hint-text.visible { display: block; }
@@ -278,6 +284,7 @@ MathJax = {
   .nav {
     display: flex; gap: 0.6rem; margin-top: 1.5rem;
     align-items: center; justify-content: center; flex-wrap: wrap;
+    position: relative; z-index: 1;
   }
 
   .nav button {
@@ -373,7 +380,7 @@ MathJax = {
     <button id="fc-prev">← Prev</button>
     <button id="fc-shuffle" class="shuffle">Shuffle</button>
     <button id="fc-next">Next →</button>
-    <button id="fc-back" class="back-btn">Back</button>
+    <button id="fc-back" class="back-btn" onclick="showScreen('mode-picker')">Back</button>
   </div>
   <div class="kbd-hint">
     <kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>Space</kbd> flip · <kbd>S</kbd> shuffle · <kbd>Esc</kbd> back
@@ -394,8 +401,10 @@ MathJax = {
   </div>
   <div class="options" id="qz-options"></div>
   <div style="text-align:center">
-    <button class="quiz-hint-btn" id="qz-hint-btn">Show hint</button>
-    <div class="quiz-hint-text" id="qz-hint-text"></div>
+    <div class="hint-box" id="qz-hint-box">
+      <button class="quiz-hint-btn" id="qz-hint-btn">Show hint</button>
+      <div class="quiz-hint-text" id="qz-hint-text"></div>
+    </div>
   </div>
   <div class="nav">
     <button id="qz-prev">← Prev</button>
@@ -601,13 +610,15 @@ function renderQz() {
       btn.classList.add('locked');
       if (opt.isCorrect) {
         btn.classList.add('correct');
+        rat.classList.add('visible');
+        typeset(rat);
       } else if (oi === answered && !opt.isCorrect) {
         btn.classList.add('wrong');
+        rat.classList.add('visible');
+        typeset(rat);
       } else {
         btn.classList.add('dimmed');
       }
-      rat.classList.add('visible');
-      typeset(rat);
     } else {
       btn.addEventListener('click', () => answerQz(oi));
     }
@@ -619,14 +630,21 @@ function renderQz() {
   });
 
   // Hint
+  const hintBox = $('qz-hint-box');
   const hintBtn = $('qz-hint-btn');
   const hintText = $('qz-hint-text');
   hintText.classList.remove('visible');
   hintText.innerHTML = sanitize(q.hint || '');
-  hintBtn.disabled = !q.hint;
-  if (answered !== null && q.hint) {
-    hintText.classList.add('visible');
-    typeset(hintText);
+  if (q.hint) {
+    hintBox.classList.add('visible');
+    hintBtn.style.display = '';
+    if (answered !== null) {
+      hintBtn.style.display = 'none';
+      hintText.classList.add('visible');
+      typeset(hintText);
+    }
+  } else {
+    hintBox.classList.remove('visible');
   }
 
   // Nav
@@ -649,7 +667,8 @@ function qzGo(d) {
 
 $('qz-hint-btn').addEventListener('click', () => {
   const ht = $('qz-hint-text');
-  ht.classList.toggle('visible');
+  ht.classList.add('visible');
+  $('qz-hint-btn').style.display = 'none';
   typeset(ht);
 });
 $('qz-prev').addEventListener('click', () => qzGo(-1));
