@@ -303,6 +303,7 @@ MathJax = {
 
 <!-- ── Lecture menu ── -->
 <div id="menu">
+  <p class="subtitle" style="margin-bottom:0.3rem">LSE EC200</p>
   <h1>Behavioural Economics</h1>
   <p class="subtitle">Summer School Flashcards</p>
   <ul class="lecture-list" id="lecture-list"></ul>
@@ -406,11 +407,35 @@ function showMenu() {
   errorEl.style.display = 'none';
 }
 
+function sanitize(s) {
+  return s
+    // Text formatting commands
+    .replace(/\\textbf\{([^}]*)\}/g, '<b>$1</b>')
+    .replace(/\\textit\{([^}]*)\}/g, '<i>$1</i>')
+    .replace(/\\emph\{([^}]*)\}/g, '<i>$1</i>')
+    .replace(/\\underline\{([^}]*)\}/g, '<u>$1</u>')
+    // Symbols outside math mode
+    .replace(/\\pounds\b/g, '£')
+    .replace(/\\euro\b/g, '€')
+    .replace(/\\yen\b/g, '¥')
+    .replace(/\\degree\b/g, '°')
+    .replace(/\\ldots\b/g, '…')
+    .replace(/\\dots\b/g, '…')
+    // Escaped special characters
+    .replace(/\\%/g, '%')
+    .replace(/\\&/g, '&amp;')
+    .replace(/\\#/g, '#')
+    .replace(/\\_/g, '_')
+    // Line breaks
+    .replace(/\\\\/g, '<br>')
+
+}
+
 function render() {
   const c = cards[idx];
   card.classList.remove('flipped');
-  frontEl.innerHTML = c.f;
-  backEl.innerHTML = c.b;
+  frontEl.innerHTML = sanitize(c.f);
+  backEl.innerHTML = sanitize(c.b);
   counterEl.textContent = `${idx + 1} / ${cards.length}`;
   progressEl.style.width = `${((idx + 1) / cards.length) * 100}%`;
   prevBtn.disabled = idx === 0;
