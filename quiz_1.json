@@ -107,25 +107,25 @@
       "hint": "Consider if a person who wants a painful shock 'immediately' is acting like a standard agent who discounts the future."
     },
     {
-      "question": "Using the Loewenstein (1987) model, if $u$ is the utility of a future event, $\\alpha$ is the salience of anticipation, and $\\delta$ is the discount factor, what is the total anticipatory utility from an event delayed by $s$ periods as valued by Self-0?",
+      "question": "Using the Loewenstein (1987) model, if $u$ is the utility of a future event, $a$ is the salience of anticipation, and $\\delta$ is the discount factor, what is the total anticipatory utility from an event delayed by $T$ periods as valued by Self-0?",
       "answerOptions": [
         {
-          "text": "$U(u, s) = \\delta^s u$",
+          "text": "$U(u, T) = \\delta^T u$",
           "isCorrect": false,
-          "rationale": "This is the classical model where utility is only derived from the consumption in period $s$ itself."
+          "rationale": "This is the classical model where utility is only derived from the consumption in period $T$ itself."
         },
         {
-          "text": "$U(u, s) = s\\alpha\\delta^s u$",
+          "text": "$U(u, T) = aT \\delta^T u$",
           "isCorrect": true,
-          "rationale": "The total value is the sum of $s$ periods of anticipatory utility, each valued at $\\alpha\\delta^s u$ from the perspective of period 0."
+          "rationale": "The total value is the sum of $s$ periods of anticipatory utility, each valued at $a\\delta^s u$ from the perspective of period 0."
         },
         {
-          "text": "$U(u, s) = (1 + \\alpha)^s u$",
+          "text": "$U(u, T) = (1 + a)^T u$",
           "isCorrect": false,
           "rationale": "This does not account for the standard discount factor $\\delta$ or the linear accumulation of anticipatory periods."
         },
         {
-          "text": "$U(u, s) = \\frac{\\alpha}{\\delta^s} u$",
+          "text": "$U(u, T) = \\frac{a}{\\delta^T} u$",
           "isCorrect": false,
           "rationale": "Anticipatory utility should be discounted, not inflated, by the distance to the future event."
         }
@@ -141,7 +141,7 @@
           "rationale": "The model focuses on the psychological experience of anticipation rather than the relative market value of the goods."
         },
         {
-          "text": "Money is not considered 'salient' in terms of anticipation ($\\alpha = 0$), so there is no utility gained from waiting.",
+          "text": "Money is not considered 'salient' in terms of anticipation ($a = 0$), so there is no utility gained from waiting.",
           "isCorrect": true,
           "rationale": "Items like money do not trigger 'savouring' or 'daydreaming' in the same way sensory or emotional experiences do, leading to standard immediate consumption preferences."
         },
@@ -177,9 +177,9 @@
           "rationale": "As $s$ grows, the term $\\delta^s$ eventually dominates, making the distant savouring and consumption worth nearly zero today."
         },
         {
-          "text": "The salience of anticipation ($\\alpha$) decreases as the event gets closer.",
+          "text": "The salience of anticipation ($a$) decreases as the event gets closer.",
           "isCorrect": false,
-          "rationale": "Salience $\\alpha$ is typically treated as a constant parameter for the type of event, not a variable of time."
+          "rationale": "Salience $a$ is typically treated as a constant parameter for the type of event, not a variable of time."
         }
       ],
       "hint": "Consider the mathematical effect of a discount factor less than 1 as the exponent increases."
