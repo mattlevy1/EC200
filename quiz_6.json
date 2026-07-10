@@ -1,0 +1,283 @@
+
+{
+  "quiz": [
+    {
+      "question": "What two key observations formed the basis of the 'Easterlin Paradox' (1974)?",
+      "answerOptions": [
+        {
+          "text": "Within a country, richer people are happier, but richer countries are not much happier than poorer ones.",
+          "isCorrect": true,
+          "rationale": "This paradox highlighted the discrepancy between individual-level and country-level happiness correlations with wealth."
+        },
+        {
+          "text": "Richer countries are significantly happier than poorer ones, but individual wealth within a country does not matter.",
+          "isCorrect": false,
+          "rationale": "This contradicts the empirical findings that within a nation, higher income typically correlates with higher reported happiness."
+        },
+        {
+          "text": "Happiness is strictly tied to absolute GDP and is independent of social comparison or cultural norms.",
+          "isCorrect": false,
+          "rationale": "The paradox suggests that relative comparisons are a primary driver of happiness, rather than just absolute wealth."
+        },
+        {
+          "text": "Unemployment has a larger impact on happiness in wealthy countries than it does in developing nations.",
+          "isCorrect": false,
+          "rationale": "While unemployment does affect happiness, this was not the primary observation of the Easterlin Paradox."
+        }
+      ],
+      "hint": "Consider how the relationship between wealth and happiness changes when moving from an internal view of a country to a global comparison."
+    },
+    {
+      "question": "How did Stevenson and Wolfers (2008) resolve much of the controversy surrounding the Easterlin Paradox?",
+      "answerOptions": [
+        {
+          "text": "They utilized new data and logarithmic income transformations to show that absolute income significantly predicts happiness.",
+          "isCorrect": true,
+          "rationale": "By accounting for non-linear utility and expanded data sets, they found a consistent slope for happiness relative to log-income."
+        },
+        {
+          "text": "They proved that only relative income matters and that absolute wealth has zero effect on subjective well-being.",
+          "isCorrect": false,
+          "rationale": "Their research actually challenged the idea that absolute income is irrelevant to happiness."
+        },
+        {
+          "text": "They argued that happiness data is too unreliable to draw any meaningful conclusions about economic growth.",
+          "isCorrect": false,
+          "rationale": "Instead of dismissing the data, they improved the methodology and estimations to find more accurate trends."
+        },
+        {
+          "text": "They found that cultural norms are the only factor that determines how people report their life satisfaction.",
+          "isCorrect": false,
+          "rationale": "While they acknowledged cultural norms, they used ordinal happiness estimates to control for them, not as an exclusive explanation."
+        }
+      ],
+      "hint": "Think about how they adjusted the mathematical representation of income to reflect decreasing marginal utility."
+    },
+    {
+      "question": "According to the 'Peak-End Rule,' which moments are most influential when an individual retrospectively evaluates an experience?",
+      "answerOptions": [
+        {
+          "text": "The most intense part and the final moments.",
+          "isCorrect": true,
+          "rationale": "This rule posits that global evaluations are dominated by these specific salient snapshots rather than an average of all moments."
+        },
+        {
+          "text": "The first moment and the total duration.",
+          "isCorrect": false,
+          "rationale": "Duration neglect is a common feature of retrospective evaluations, meaning total time is often ignored in favor of intensity."
+        },
+        {
+          "text": "A moment-by-moment sum of all feelings recorded during the event.",
+          "isCorrect": false,
+          "rationale": "Humans do not typically calculate a perfect mathematical integral of their experiences when recalling them."
+        },
+        {
+          "text": "The most pleasant moment and the longest pause.",
+          "isCorrect": false,
+          "rationale": "The rule focuses specifically on intensity (peak) and the conclusion (end), which may be positive or negative."
+        }
+      ],
+      "hint": "Think about which parts of a movie or a medical procedure you would likely remember most vividly."
+    },
+    {
+      "question": "In Kahneman's cold water experiment, why did 69\\% of subjects prefer to repeat the 'Long Treatment' despite it involving more total pain?",
+      "answerOptions": [
+        {
+          "text": "The final 30 seconds were slightly less cold ($15^{\\circ}C$ vs. $14^{\\circ}C$), improving the 'end' component of their memory.",
+          "isCorrect": true,
+          "rationale": "Because the end was less intense, the Peak-End Rule caused subjects to recall the entire trial as less painful overall."
+        },
+        {
+          "text": "Subjects were confused by the instructions and chose the wrong option by mistake.",
+          "isCorrect": false,
+          "rationale": "The preference was consistent across most subjects, suggesting a systematic psychological bias rather than random error."
+        },
+        {
+          "text": "The water temperature in the Long Treatment was actually warmer throughout the entire 90 seconds.",
+          "isCorrect": false,
+          "rationale": "The first 60 seconds were identical in temperature, and the total exposure to cold was longer in the second trial."
+        },
+        {
+          "text": "The subjects were offered a monetary reward for choosing the longer duration.",
+          "isCorrect": false,
+          "rationale": "The choice was based on their retrospective evaluation of the experience, not on external financial incentives."
+        }
+      ],
+      "hint": "Recall how the temperature changed right before the hand was removed in the second trial."
+    },
+    {
+      "question": "The study by Read and van Leeuwen on snack choices found that currently hungry workers were more likely to choose an unhealthy snack for the following week. This is an example of:",
+      "answerOptions": [
+        {
+          "text": "Projection bias.",
+          "isCorrect": true,
+          "rationale": "The workers projected their current state of hunger onto their future preferences, underestimating how being satiated in the future would change their tastes."
+        },
+        {
+          "text": "The availability heuristic.",
+          "isCorrect": false,
+          "rationale": "While related to salience, the specific error of assuming future tastes will match current ones is defined as projection bias."
+        },
+        {
+          "text": "Risk aversion.",
+          "isCorrect": false,
+          "rationale": "The choice of snacks is about preference and state-dependence, not about avoiding uncertain outcomes or financial risk."
+        },
+        {
+          "text": "Rational addiction.",
+          "isCorrect": false,
+          "rationale": "Rational addiction involves planned consumption based on habits, whereas this was a misprediction of future desires based on a temporary state."
+        }
+      ],
+      "hint": "This term describes when people predict future preferences that too closely resemble their current ones."
+    },
+    {
+      "question": "In the model of Simple Projection Bias, $\\tilde{u}(c_T, s_T; s_0) = (1 - \\alpha)u(c_T, s_T) + \\alpha u(c_T, s_0)$, what does a value of $\\alpha = 1$ imply?",
+      "answerOptions": [
+        {
+          "text": "The agent believes their future utility will be exactly the same as their utility in their current state.",
+          "isCorrect": true,
+          "rationale": "If $\\alpha = 1$, the first term disappears, and the agent's prediction is entirely based on their current state $s_0$."
+        },
+        {
+          "text": "The agent has perfect foresight and correctly predicts their future utility.",
+          "isCorrect": false,
+          "rationale": "Perfect foresight would correspond to $\\alpha = 0$, where the prediction matches the actual future state $s_T$."
+        },
+        {
+          "text": "The agent ignores their current state and only considers the future state.",
+          "isCorrect": false,
+          "rationale": "This would be the case if $\\alpha = 0$, which represents no projection bias."
+        },
+        {
+          "text": "The agent's utility is independent of their state.",
+          "isCorrect": false,
+          "rationale": "The model assumes utility is state-dependent; $\\alpha$ merely dictates how those states are perceived during prediction."
+        }
+      ],
+      "hint": "Look at which term in the equation remains when you substitute the value into the formula."
+    },
+    {
+      "question": "Gilbert et al. (1998) found that assistant professors overestimated the impact of tenure decisions on their happiness. Which finding specifically illustrated their adaptation?",
+      "answerOptions": [
+        {
+          "text": "The 'Ancient' group (6-10 years post-tenure) reported similar happiness regardless of whether they achieved tenure or not.",
+          "isCorrect": true,
+          "rationale": "This shows that over the long run, individuals adapt to life changes, and the initial emotional impact dissipates."
+        },
+        {
+          "text": "Current professors predicted they would be equally happy in both the tenure and no-tenure scenarios.",
+          "isCorrect": false,
+          "rationale": "Current professors actually predicted a very large difference in happiness depending on the outcome."
+        },
+        {
+          "text": "Those who achieved tenure were significantly unhappier than those who did not after 5 years.",
+          "isCorrect": false,
+          "rationale": "The study found that both groups returned to a relatively similar baseline of happiness over time."
+        },
+        {
+          "text": "Predictions of long-run happiness were more inaccurate than short-run predictions.",
+          "isCorrect": false,
+          "rationale": "The source notes that subjects had some understanding of adaptation in the long run, making long-run predictions slightly less inaccurate."
+        }
+      ],
+      "hint": "Adaptation refers to the tendency of people to return to a baseline level of happiness after major life events."
+    },
+    {
+      "question": "What is the key economic assumption defining 'adjacent complementarity' in habit formation?",
+      "answerOptions": [
+        {
+          "text": "The marginal utility of current consumption increases as past consumption increases.",
+          "isCorrect": true,
+          "rationale": "This captures the essence of a habit: the more you have done something in the past, the more valuable doing it again becomes today."
+        },
+        {
+          "text": "Consumption today reduces the desire to consume the same good tomorrow.",
+          "isCorrect": false,
+          "rationale": "This describes satiation, which is the opposite of the reinforcing effect found in habit formation."
+        },
+        {
+          "text": "A consumer will only consume a good if its price is adjacent to its marginal cost.",
+          "isCorrect": false,
+          "rationale": "Adjacent complementarity refers to the relationship between consumption over time periods, not to price theory."
+        },
+        {
+          "text": "Happiness is only possible if an individual consumes at least two different goods simultaneously.",
+          "isCorrect": false,
+          "rationale": "This describes standard complementary goods in a single time period, not the time-dependent nature of habits."
+        }
+      ],
+      "hint": "Think about the relationship between your past actions and the 'boost' you get from repeating them now."
+    },
+    {
+      "question": "In the exercise habit experiment by Acland and Levy, what did the estimated projection bias of $\\alpha = 0.9$ suggest about the students?",
+      "answerOptions": [
+        {
+          "text": "They almost entirely failed to anticipate the habit-forming nature of exercise.",
+          "isCorrect": true,
+          "rationale": "A high $\\alpha$ means their predictions were dominated by their current 'non-habituated' state, ignoring the future 'habituated' state."
+        },
+        {
+          "text": "They were extremely accurate in predicting how much they would want to go to the gym later.",
+          "isCorrect": false,
+          "rationale": "Accuracy would require a much lower $\\alpha$ value (closer to 0)."
+        },
+        {
+          "text": "They believed that a \\$2.60 subsidy was worth less than a \\$0.20 subsidy.",
+          "isCorrect": false,
+          "rationale": "The data showed they only predicted a \\$0.20 value for a habit that was actually worth \\$2.60 to them, not that they undervalued money itself."
+        },
+        {
+          "text": "They predicted they would become addicted to the gym after only one visit.",
+          "isCorrect": false,
+          "rationale": "The high projection bias means they failed to see any significant change in their future preferences at all."
+        }
+      ],
+      "hint": "A high value in this model indicates that the individual's prediction is very 'anchored' to their current state."
+    },
+    {
+      "question": "Clark and Oswald (1994) noted that unemployment increases unhappiness, but this effect is lessened in high-unemployment areas. This supports the idea that:",
+      "answerOptions": [
+        {
+          "text": "Happiness is driven by relative comparisons to a contemporaneous peer group.",
+          "isCorrect": true,
+          "rationale": "When others are also unemployed, the relative social standing and comparison are less damaging to subjective well-being."
+        },
+        {
+          "text": "Unemployment is less economically damaging in areas with fewer jobs.",
+          "isCorrect": false,
+          "rationale": "The economic damage may be equal or worse; the study specifically measures subjective unhappiness, not financial loss."
+        },
+        {
+          "text": "Absolute income is the only factor that people consider when reporting life satisfaction.",
+          "isCorrect": false,
+          "rationale": "If absolute income were the only factor, the local unemployment rate would not mitigate the unhappiness of the individual."
+        },
+        {
+          "text": "People in high-unemployment areas are naturally more resilient to stress.",
+          "isCorrect": false,
+          "rationale": "The lecture attributes this effect to reference-dependent preferences and social comparison, not innate personality differences."
+        }
+      ],
+      "hint": "Consider why your neighbors' status might change how you feel about your own status."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "Easterlin Paradox",
+      "Peak-End Rule",
+      "Projection Bias",
+      "Habit Formation",
+      "Subjective Well-being",
+      "Relative vs Absolute Income"
+    ],
+    "followUp": [
+      "Hedonic Treadmill",
+      "State-Dependent Preferences",
+      "Availability Heuristic in Memory",
+      "Rational Addiction Model",
+      "Duration Neglect"
+    ]
+  }
+}
+

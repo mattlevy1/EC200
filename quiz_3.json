@@ -1,0 +1,283 @@
+
+{
+  "quiz": [
+    {
+      "question": "According to Kahneman (2011), which cognitive system is responsible for allocating attention to 'effortful mental activities' such as complex calculations?",
+      "answerOptions": [
+        {
+          "text": "System 1",
+          "isCorrect": false,
+          "rationale": "This system operates automatically and quickly with little to no voluntary control."
+        },
+        {
+          "text": "System 2",
+          "isCorrect": true,
+          "rationale": "This system manages tasks requiring mental energy, concentration, and agency, such as mathematical computation."
+        },
+        {
+          "text": "The Heuristic System",
+          "isCorrect": false,
+          "rationale": "Heuristics are simplified processes used by the brain, but they are not categorized as a distinct system alongside System 1 and System 2."
+        },
+        {
+          "text": "The Bayesian System",
+          "isCorrect": false,
+          "rationale": "Bayesian logic represents a mathematical ideal for rationality rather than one of the two psychological systems identified by Kahneman."
+        }
+      ],
+      "hint": "Consider which system is described as 'slow' and 'lazy' versus 'fast' and 'automatic'."
+    },
+    {
+      "question": "In the context of behavioral economics, what is the primary function of a heuristic when a person is faced with a difficult problem?",
+      "answerOptions": [
+        {
+          "text": "To perform a rigorous Bayesian update using all available data",
+          "isCorrect": false,
+          "rationale": "Heuristics are shortcuts that often bypass the complex calculations required by Bayesian rationality."
+        },
+        {
+          "text": "To activate System 2 to ensure the most accurate possible outcome",
+          "isCorrect": false,
+          "rationale": "Heuristics are typically tools of System 1, used to avoid the high mental cost of activating System 2."
+        },
+        {
+          "text": "To substitute a harder question with an easier, related one",
+          "isCorrect": true,
+          "rationale": "Heuristics provide approximate answers by addressing a simpler version of the original, complex problem."
+        },
+        {
+          "text": "To eliminate the possibility of systematic bias in judgment",
+          "isCorrect": false,
+          "rationale": "While heuristics are often useful, they are specifically noted for leading to systematic errors or biases."
+        }
+      ],
+      "hint": "Think about how our brains simplify 'how happy are you with life?' into 'what is my mood right now?'"
+    },
+    {
+      "question": "Based on the testing example provided in the lecture, if a disease has a $10\\%$ base rate, an $80\\%$ true positive rate, and a $10\\%$ false positive rate, what is the probability of having the disease given a positive test?",
+      "answerOptions": [
+        {
+          "text": "$80\\%$",
+          "isCorrect": false,
+          "rationale": "This value reflects the sensitivity of the test but ignores the significant impact of false positives among the healthy population."
+        },
+        {
+          "text": "$47\\%$",
+          "isCorrect": true,
+          "rationale": "This is calculated by dividing the true positives ($0.1 \\times 0.8$) by the total positive tests ($0.08 + 0.09$)."
+        },
+        {
+          "text": "$10\\%$",
+          "isCorrect": false,
+          "rationale": "This is the prior probability (base rate) and does not account for the new information provided by the positive test result."
+        },
+        {
+          "text": "$90\\%$",
+          "isCorrect": false,
+          "rationale": "This would only be true if the false positive rate were extremely low or nonexistent, which is not the case here."
+        }
+      ],
+      "hint": "You must divide the number of ways the test is positive and the disease is present by the total number of ways the test can be positive."
+    },
+    {
+      "question": "Which heuristic is being utilized when an individual judges the frequency of an event based on how easily instances of that event come to mind?",
+      "answerOptions": [
+        {
+          "text": "Representativeness",
+          "isCorrect": false,
+          "rationale": "This heuristic focuses on similarity to a prototype rather than the ease of mental retrieval."
+        },
+        {
+          "text": "Anchoring and Adjustment",
+          "isCorrect": false,
+          "rationale": "This involves starting from an initial value and moving away from it, rather than sampling memory for occurrences."
+        },
+        {
+          "text": "Availability",
+          "isCorrect": true,
+          "rationale": "This heuristic relies on mental 'availability' or the ease of search and imaginability to estimate probability."
+        },
+        {
+          "text": "The Law of Small Numbers",
+          "isCorrect": false,
+          "rationale": "This is a belief about sample sizes and underlying distributions, not a process based on memory recall."
+        }
+      ],
+      "hint": "Think about why people might overestimate the risk of terrorism compared to heart disease due to media coverage."
+    },
+    {
+      "question": "In the experiment involving the calculation of $8 \\times 7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1$ vs. $1 \\times 2 \\times 3 \\times 4 \\times 5 \\times 6 \\times 7 \\times 8$, what did the results demonstrate about the Anchoring and Adjustment heuristic?",
+      "answerOptions": [
+        {
+          "text": "People calculate the full product regardless of the order of numbers.",
+          "isCorrect": false,
+          "rationale": "The vastly different median estimates between groups suggest that people do not complete the full calculation."
+        },
+        {
+          "text": "The group starting with '8' gave a higher estimate because they anchored on a larger initial product.",
+          "isCorrect": true,
+          "rationale": "By calculating the first few terms, the first group established a higher starting point for their extrapolation."
+        },
+        {
+          "text": "Calculations involving descending numbers are inherently harder for System 2.",
+          "isCorrect": false,
+          "rationale": "The difficulty is roughly equal; the difference in results is due to the psychological effect of the starting values."
+        },
+        {
+          "text": "People are generally well-calibrated when extrapolating exponential growth.",
+          "isCorrect": false,
+          "rationale": "The correct answer was $40,320$, while the highest median estimate was only $2,250$, showing massive underestimation."
+        }
+      ],
+      "hint": "Consider how the first few numbers in the sequence act as a 'first-pass guess' for the final answer."
+    },
+    {
+      "question": "Which phenomenon describes the tendency for married couples to overestimate their own contribution to household tasks, often resulting in a sum greater than $100\\%$?",
+      "answerOptions": [
+        {
+          "text": "Base-rate neglect",
+          "isCorrect": false,
+          "rationale": "Base-rate neglect involves ignoring general statistics in favor of specific descriptions, which does not apply to task sharing."
+        },
+        {
+          "text": "Egocentrism in the availability heuristic",
+          "isCorrect": true,
+          "rationale": "Individuals find it much easier to recall their own actions than those of their partner, leading to an inflated sense of their own contribution."
+        },
+        {
+          "text": "The Hot Hand Fallacy",
+          "isCorrect": false,
+          "rationale": "This fallacy relates to predicting streaks in independent events, not social contribution estimates."
+        },
+        {
+          "text": "Conservatism bias",
+          "isCorrect": false,
+          "rationale": "Conservatism bias is an insensitivity to sample size changes, not a self-serving recall bias."
+        }
+      ],
+      "hint": "The answer relates to whose actions are most 'available' to your own memory."
+    },
+    {
+      "question": "In the 'Linda Problem,' why is the statement 'Linda is a bank teller and active in the feminist movement' logically less probable than 'Linda is a bank teller'?",
+      "answerOptions": [
+        {
+          "text": "Because bank tellers are rarely feminists according to base rates.",
+          "isCorrect": false,
+          "rationale": "This is a stereotypical assumption, not a logical rule regarding probability."
+        },
+        {
+          "text": "Because the probability of a conjunction of two events cannot exceed the probability of one of its constituents.",
+          "isCorrect": true,
+          "rationale": "Mathematically, the set of 'feminist bank tellers' is a subset of 'bank tellers,' making it strictly less likely or equal."
+        },
+        {
+          "text": "Because the description of Linda as 'bright' and 'outspoken' contradicts the bank teller profile.",
+          "isCorrect": false,
+          "rationale": "While this explains why people find the bank teller option unlikely, it doesn't explain the logical relationship between the two statements."
+        },
+        {
+          "text": "Because the availability heuristic makes 'feminist' easier to recall than 'bank teller.'",
+          "isCorrect": false,
+          "rationale": "The Linda problem primarily illustrates the representativeness heuristic, not availability."
+        }
+      ],
+      "hint": "Think about the Venn diagram relationship between a single category and a combination of two categories."
+    },
+    {
+      "question": "What is the key distinction between the Gambler’s Fallacy and the Hot Hand Fallacy according to the 'Law of Small Numbers' model?",
+      "answerOptions": [
+        {
+          "text": "The Gambler's Fallacy occurs when the underlying distribution is unknown.",
+          "isCorrect": false,
+          "rationale": "The Gambler's Fallacy typically occurs when the distribution is known, such as in a fair coin flip or roulette wheel."
+        },
+        {
+          "text": "The Hot Hand Fallacy occurs when a person knows the distribution and expects it to correct itself.",
+          "isCorrect": false,
+          "rationale": "Expecting a 'correction' is the hallmark of the Gambler's Fallacy, not the Hot Hand Fallacy."
+        },
+        {
+          "text": "The Gambler's Fallacy involves predicting a reversal, while the Hot Hand Fallacy involves predicting a continuation of a streak.",
+          "isCorrect": true,
+          "rationale": "One expects a correction to the mean (GF), while the other assumes the person or process is 'hot' and will continue the trend (HH)."
+        },
+        {
+          "text": "They are unrelated and stem from entirely different psychological heuristics.",
+          "isCorrect": false,
+          "rationale": "Both are actually predicted by the 'Law of Small Numbers,' representing different applications of the same biased belief about samples."
+        }
+      ],
+      "hint": "One believes 'red is due' while the other believes 'he can't miss right now'."
+    },
+    {
+      "question": "How does the 'Freddy' model (biased agent) explain the Gambler's Fallacy using an urn analogy?",
+      "answerOptions": [
+        {
+          "text": "Freddy believes the urn is being refilled with more balls after every draw.",
+          "isCorrect": false,
+          "rationale": "This would imply an increasing sample, whereas the model focuses on how Freddy views a small, depleting sample."
+        },
+        {
+          "text": "Freddy behaves as if draws are made without replacement for a short period.",
+          "isCorrect": true,
+          "rationale": "By failing to 'replace' the ball in his mental model, Freddy thinks the remaining pool is now more likely to yield the opposite color."
+        },
+        {
+          "text": "Freddy assumes the urn contains an infinite number of balls.",
+          "isCorrect": false,
+          "rationale": "If he believed the sample was infinite, he would likely follow Bayesian logic more closely as the impact of one draw would be negligible."
+        },
+        {
+          "text": "Freddy ignores the first draw entirely when predicting the second draw.",
+          "isCorrect": false,
+          "rationale": "Freddy specifically over-adjusts based on the first draw, which is the source of the fallacy."
+        }
+      ],
+      "hint": "Think about what happens to the probability of drawing a red ball if you take one out and don't put it back."
+    },
+    {
+      "question": "What is 'fictitious variation' as discussed in the lecture regarding mutual fund managers?",
+      "answerOptions": [
+        {
+          "text": "The realization that most managers perform exactly at the level of the benchmark.",
+          "isCorrect": false,
+          "rationale": "Fictitious variation is a false belief in differences that do not actually exist."
+        },
+        {
+          "text": "The belief that managers who beat the benchmark twice in a row are 'good' types, even if it was just luck.",
+          "isCorrect": true,
+          "rationale": "Because the agent expects streaks to be rare, they invent 'extreme types' (good or bad) to explain why streaks occurred."
+        },
+        {
+          "text": "The mathematical proof that manager performance is purely random.",
+          "isCorrect": false,
+          "rationale": "Fictitious variation describes the observer's psychological bias, not the statistical reality of the managers."
+        },
+        {
+          "text": "The tendency for managers to change their strategy frequently to confuse investors.",
+          "isCorrect": false,
+          "rationale": "This refers to the manager's actions, while the concept in the lecture refers to the investor's biased perception of types."
+        }
+      ],
+      "hint": "It involves the 'Freddy' model concluding that there must be 'good' and 'bad' performers because he sees streaks he doesn't think should happen by chance."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "System 1 and System 2 Thinking",
+      "The Availability Heuristic",
+      "Anchoring and Adjustment Heuristic",
+      "The Representativeness Heuristic",
+      "Bayesian Rationality and Base-Rate Neglect",
+      "The Law of Small Numbers",
+      "Gambler's Fallacy vs. Hot Hand Fallacy"
+    ],
+    "followUp": [
+      "Egocentrism in Social Judgments",
+      "The Conjunction Fallacy in Probability",
+      "Insensitivity to Sample Size",
+      "Fictitious Variation in Financial Markets",
+      "Biases in Professional Decision Making (Judges and Umpires)"
+    ]
+  }
+}

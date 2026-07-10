@@ -1,0 +1,338 @@
+
+{
+  "quiz": [
+    {
+      "question": "In the St. Petersburg Paradox, what is the calculated expected value ($EV$) of the gamble where the payout doubles with each subsequent coin flip?",
+      "answerOptions": [
+        {
+          "text": "$EV = 1$",
+          "isCorrect": false,
+          "rationale": "This value might be mistaken for the probability of the first flip or the expected value of a single specific round, rather than the sum of the entire infinite series."
+        },
+        {
+          "text": "$EV = 4$",
+          "isCorrect": false,
+          "rationale": "While £4 is mentioned in the text as a certainty equivalent for a specific logarithmic utility function, it does not represent the objective expected value of the gamble."
+        },
+        {
+          "text": "$EV = \\infty$",
+          "isCorrect": true,
+          "rationale": "Because the sum of probabilities times outcomes results in $\\sum_{t=1}^{\\infty} (\\frac{1}{2})^t \\cdot 2^t$, which simplifies to a series of 1s added infinitely."
+        },
+        {
+          "text": "$EV = \\ln(2)$",
+          "isCorrect": false,
+          "rationale": "This value relates to the expected utility calculation using a logarithmic function rather than the objective monetary expected value."
+        }
+      ],
+      "hint": "Consider the mathematical result of summing an infinite number of identical positive values."
+    },
+    {
+      "question": "According to Daniel Bernoulli's (1738) proposal, why do individuals typically display risk-aversion regarding large sums of money?",
+      "answerOptions": [
+        {
+          "text": "They suffer from a cognitive inability to calculate probabilities correctly.",
+          "isCorrect": false,
+          "rationale": "The source material focuses on the subjective value of wealth rather than errors in statistical processing."
+        },
+        {
+          "text": "They exhibit diminishing marginal utility of wealth ($DMU$).",
+          "isCorrect": true,
+          "rationale": "This principle suggests that as wealth increases, the subjective benefit of an additional unit of currency decreases, making a potential loss feel more significant than an equivalent gain."
+        },
+        {
+          "text": "The reference point of their wealth is constantly shifting.",
+          "isCorrect": false,
+          "rationale": "While reference points are a key part of Prospect Theory, Bernoulli's original explanation relied on the concave shape of the utility function itself."
+        },
+        {
+          "text": "They are naturally risk-loving in the domain of gains.",
+          "isCorrect": false,
+          "rationale": "Economic theory generally posits that diminishing marginal utility leads to risk-aversion, not risk-seeking behavior, when dealing with gains."
+        }
+      ],
+      "hint": "Think about how the 'importance' of an extra £100 changes depending on whether you are poor or wealthy."
+    },
+    {
+      "question": "An agent has a utility function $u(x) = \\sqrt{x}$. If offered a 50-50 gamble to win £100 or £0, what is the certainty equivalent of this lottery?",
+      "answerOptions": [
+        {
+          "text": "£50",
+          "isCorrect": false,
+          "rationale": "This represents the expected value ($EV$) of the lottery, not the amount of certain cash that provides the same utility as the risky prospect."
+        },
+        {
+          "text": "£25",
+          "isCorrect": true,
+          "rationale": "The expected utility ($EU$) is $0.5 \\cdot \\sqrt{100} + 0.5 \\cdot \\sqrt{0} = 5$, and the amount of money $x$ that yields $u(x) = 5$ is $5^2 = 25$."
+        },
+        {
+          "text": "£10",
+          "isCorrect": false,
+          "rationale": "This is the utility value ($5utils$) multiplied by two, which does not correctly apply the inverse of the square root function to find the monetary equivalent."
+        },
+        {
+          "text": "£36",
+          "isCorrect": false,
+          "rationale": "While £36 provides more utility ($6utils$) than the lottery, it is not the exact point where the agent is indifferent between the cash and the gamble."
+        }
+      ],
+      "hint": "Find the amount of certain money that generates the same number of 'utils' as the average utility of the gamble."
+    },
+    {
+      "question": "What is the primary 'carrier of value' in Kahneman and Tversky's Prospect Theory?",
+      "answerOptions": [
+        {
+          "text": "Final states of absolute wealth.",
+          "isCorrect": false,
+          "rationale": "This is the assumption of standard Expected Utility Theory, which Prospect Theory seeks to challenge by looking at relative outcomes."
+        },
+        {
+          "text": "Changes in wealth or welfare relative to a reference point.",
+          "isCorrect": true,
+          "rationale": "Prospect Theory posits that people perceive outcomes as gains or losses from a specific starting point rather than evaluating their total resulting assets."
+        },
+        {
+          "text": "The expected value of the final asset position.",
+          "isCorrect": false,
+          "rationale": "Evaluating only the expected value ignores the psychological impact of how those values are framed as departures from the status quo."
+        },
+        {
+          "text": "The total historical accumulation of utility.",
+          "isCorrect": false,
+          "rationale": "The theory focuses on the immediate evaluation of a prospect's potential changes rather than a long-term historical sum of experiences."
+        }
+      ],
+      "hint": "Recall the quote: 'it’s difficult to perceive the objective luminance... but easy to say whether it is lighter or darker'."
+    },
+    {
+      "question": "Which property of the Prospect Theory value function ($v$) explains why people are generally risk-averse in the domain of gains but risk-loving in the domain of losses?",
+      "answerOptions": [
+        {
+          "text": "Loss Aversion",
+          "isCorrect": false,
+          "rationale": "Loss aversion explains why the function is steeper for losses than gains, but not the specific change in curvature (concave vs. convex)."
+        },
+        {
+          "text": "Diminishing Sensitivity",
+          "isCorrect": true,
+          "rationale": "This property implies the function is concave for gains ($v''(x) \\le 0$) and convex for losses ($v''(x) \\ge 0$), meaning marginal changes matter less as one moves further from the reference point."
+        },
+        {
+          "text": "Monotonicity",
+          "isCorrect": false,
+          "rationale": "Monotonicity simply means the function is always increasing; it does not dictate the specific curvature that determines risk preferences."
+        },
+        {
+          "text": "Piecewise Differentiability",
+          "isCorrect": false,
+          "rationale": "This is a mathematical requirement for the function's structure but does not describe the psychological trend of sensitivity to gains and losses."
+        }
+      ],
+      "hint": "Think about the S-shape of the value function and how its slope changes as you move further away from zero."
+    },
+    {
+      "question": "In the context of the Prospect Theory value function, what does the parameter $\\lambda > 1$ represent?",
+      "answerOptions": [
+        {
+          "text": "The agent is twice as likely to take a risk when facing a loss.",
+          "isCorrect": false,
+          "rationale": "This confuses the probability of taking a risk with the subjective weight or 'pain' associated with a loss."
+        },
+        {
+          "text": "An equal-sized loss is more psychologically costly than an equivalent gain is rewarding.",
+          "isCorrect": true,
+          "rationale": "The kink at the reference point ($0$) indicates that the slope of the loss domain is steeper than the slope of the gain domain."
+        },
+        {
+          "text": "The agent's utility for money follows a natural logarithm.",
+          "isCorrect": false,
+          "rationale": "Logarithmic utility is a feature of Bernoulli's traditional risk-aversion model, not the loss-aversion kink of Prospect Theory."
+        },
+        {
+          "text": "The reference point is determined by recent expectations.",
+          "isCorrect": false,
+          "rationale": "While expectations can be a reference point, the $\\lambda$ parameter specifically quantifies the ratio of loss-disutility to gain-utility."
+        }
+      ],
+      "hint": "Look for the mathematical definition of the 'kink' at the origin $x = r$."
+    },
+    {
+      "question": "The 'Endowment Effect' experiment by Kahneman, Knetsch, and Thaler ($KKT$) found a significant gap between which two values?",
+      "answerOptions": [
+        {
+          "text": "The Expected Value and the Expected Utility.",
+          "isCorrect": false,
+          "rationale": "This gap defines risk-aversion in general, but the Endowment Effect specifically concerns the ownership of a physical object."
+        },
+        {
+          "text": "Willingness to Pay ($WTP$) and Willingness to Accept ($WTA$).",
+          "isCorrect": true,
+          "rationale": "Sellers (endowed with a mug) demanded a median price ($WTA$) roughly twice as high as the median price buyers ($WTP$) were willing to offer."
+        },
+        {
+          "text": "The market price of mugs and the student store price.",
+          "isCorrect": false,
+          "rationale": "The experiment compared the valuations of owners versus non-owners within the classroom, not external retail prices."
+        },
+        {
+          "text": "The value of mugs and the value of candy bars.",
+          "isCorrect": false,
+          "rationale": "While both items were used in a trade experiment, the 'effect' itself refers to the discrepancy in valuation based on ownership status for a single item."
+        }
+      ],
+      "hint": "Consider the difference in how a person values an item they already own versus an item they are thinking about buying."
+    },
+    {
+      "question": "What observation regarding NYC cab drivers' labor supply supports the theory of income targeting as a reference point?",
+      "answerOptions": [
+        {
+          "text": "Drivers work more hours on rainy days because the wage is higher.",
+          "isCorrect": false,
+          "rationale": "Standard economics predicts this, but the studies actually found the opposite behavior, suggesting a behavioral deviation."
+        },
+        {
+          "text": "A 10% increase in the wage resulted in a 5% decrease in hours worked.",
+          "isCorrect": true,
+          "rationale": "This negative elasticity suggests drivers stop working once they reach a daily earnings target (reference point), even if high wages make additional work lucrative."
+        },
+        {
+          "text": "Drivers work the maximum 12-hour shift regardless of the wage level.",
+          "isCorrect": false,
+          "rationale": "This would imply labor supply is perfectly inelastic and unaffected by monetary incentives or reference points."
+        },
+        {
+          "text": "Drivers only work on days when the expected wage is above a fixed threshold.",
+          "isCorrect": false,
+          "rationale": "This describes a reservation wage strategy, which does not explain why hours decrease on days when wages are actually high."
+        }
+      ],
+      "hint": "Look for a finding that contradicts the standard economic logic of 'working more when paid more'."
+    },
+    {
+      "question": "In the 'Asian Disease' framing experiment, why do most people choose the risky option (Program D) when the outcomes are described in terms of 'people will die'?",
+      "answerOptions": [
+        {
+          "text": "They become risk-averse when outcomes are framed as losses.",
+          "isCorrect": false,
+          "rationale": "Risk-aversion would lead people to the certain option (Program C), but the majority actually choose the gamble."
+        },
+        {
+          "text": "The reference point makes 'deaths' feel like a gain if someone survives.",
+          "isCorrect": false,
+          "rationale": "The deaths are perceived as losses from the status quo of 600 people currently at risk."
+        },
+        {
+          "text": "The value function is convex in the domain of losses, leading to risk-seeking behavior.",
+          "isCorrect": true,
+          "rationale": "Because the subjective pain of 600 deaths is not 1.5 times worse than 400 deaths, people are willing to gamble to avoid the certain loss of 400 lives."
+        },
+        {
+          "text": "Program D has a higher expected value of lives saved than Program C.",
+          "isCorrect": false,
+          "rationale": "Both programs are mathematically identical in their expected outcomes; only the linguistic framing differs."
+        }
+      ],
+      "hint": "Recall the psychological reaction to 'diminishing sensitivity' when dealing with negative outcomes."
+    },
+    {
+      "question": "Rabin (2000) argued that Expected Utility Theory ($EUT$) fails to explain small-stakes gambles. What was his primary critique?",
+      "answerOptions": [
+        {
+          "text": "People are actually risk-neutral for all gambles involving less than £1,000.",
+          "isCorrect": false,
+          "rationale": "Rabin noted that people *are* risk-averse for small stakes, but that $EUT$ cannot explain it without creating absurd conclusions for large stakes."
+        },
+        {
+          "text": "The utility function for money is locally linear, so $EUT$ predicts approximate risk-neutrality for small stakes.",
+          "isCorrect": true,
+          "rationale": "He showed that if you use diminishing marginal utility to explain why someone rejects a small 50-50 bet, the utility function must curve so sharply that the person would reject infinitely large gains later."
+        },
+        {
+          "text": "Expected Utility Theory does not account for the probability of winning.",
+          "isCorrect": false,
+          "rationale": "Probability is a core component of $EUT$; the critique centers on the curvature of the utility function $u(x)$."
+        },
+        {
+          "text": "People only care about expected value and never about the utility of the outcome.",
+          "isCorrect": false,
+          "rationale": "The critique is directed at the limits of utility-based risk aversion, not the abandonment of the utility concept entirely."
+        }
+      ],
+      "hint": "Consider how a function that 'curves enough' to notice a £10 difference might look when we 'zoom out' to millions of pounds."
+    },
+    {
+      "question": "Koszegi and Rabin (2006) proposed a specific modification to Prospect Theory regarding the reference point. What was it?",
+      "answerOptions": [
+        {
+          "text": "The reference point is always set to zero wealth.",
+          "isCorrect": false,
+          "rationale": "A reference point at zero would fail to explain why people view changes in their current status as significant."
+        },
+        {
+          "text": "The reference point is determined by an individual's recent expectations.",
+          "isCorrect": true,
+          "rationale": "This explains why someone might feel a 'loss' even if they receive a raise, provided the raise was smaller than what they anticipated."
+        },
+        {
+          "text": "The reference point is fixed and cannot be changed by framing.",
+          "isCorrect": false,
+          "rationale": "The source material emphasizes that reference points are powerful and can be manipulated by framing or defaults."
+        },
+        {
+          "text": "The reference point is the average wealth of one's peers.",
+          "isCorrect": false,
+          "rationale": "While social comparison is a concept in economics, the Koszegi-Rabin model specifically focuses on internal expectations."
+        }
+      ],
+      "hint": "Think about Matilda's raise scenario—she earned more than before, but felt bad because she 'expected' even more."
+    },
+    {
+      "question": "Which of the following describes the relationship $u(EV) > EU$ for an agent with diminishing marginal utility ($DMU$)?",
+      "answerOptions": [
+        {
+          "text": "The agent is risk-neutral.",
+          "isCorrect": false,
+          "rationale": "Risk neutrality is defined by $u(EV) = EU$, where the agent is indifferent between the certain average and the risky gamble."
+        },
+        {
+          "text": "The agent is risk-averse.",
+          "isCorrect": true,
+          "rationale": "This inequality means the agent prefers the guaranteed expected value of a lottery over the gamble itself."
+        },
+        {
+          "text": "The agent is risk-loving.",
+          "isCorrect": false,
+          "rationale": "Risk-loving behavior is characterized by $EU > u(EV)$, where the thrill of the gamble outweighs the certain average."
+        },
+        {
+          "text": "The agent is displaying loss aversion.",
+          "isCorrect": false,
+          "rationale": "Loss aversion is a concept from Prospect Theory involving reference points, whereas this notation describes standard Expected Utility Theory."
+        }
+      ],
+      "hint": "Focus on whether the agent prefers the 'sure thing' (the expected value) or the 'risky lottery'."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "St. Petersburg Paradox",
+      "Expected Utility Theory",
+      "Diminishing Marginal Utility",
+      "Risk Aversion",
+      "Prospect Theory",
+      "Value Function",
+      "Loss Aversion",
+      "Endowment Effect",
+      "Framing Effects",
+      "Behavioral Labor Supply"
+    ],
+    "followUp": [
+      "Favorite-longshot bias in betting markets",
+      "Rabin's Calibration Theorem",
+      "Reference point formation and expectations",
+      "Inefficient choices in labor supply elasticity",
+      "Certainty equivalents in concave utility functions"
+    ]
+  }
+}

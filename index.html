@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Behavioural Economics Flashcards</title>
+<title>EC200 Behavioural Economics</title>
 <script>
 MathJax = {
   tex: { inlineMath: [['$','$'], ['\\(','\\)']] },
@@ -28,6 +28,10 @@ MathJax = {
     --border: #ddd9d1;
     --shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
     --radius: 16px;
+    --correct: #3a7d5c;
+    --correct-light: #e6f3ed;
+    --wrong: #a04040;
+    --wrong-light: #fbeaea;
   }
 
   body {
@@ -41,118 +45,126 @@ MathJax = {
     padding: 2rem 1rem;
   }
 
-  /* ── Menu screen ── */
+  .screen { display: none; width: 100%; max-width: 520px; }
+  .screen.active { display: block; }
 
-  #menu {
-    width: 100%;
-    max-width: 480px;
-    text-align: center;
-  }
+  /* ── Menu ── */
+
+  #menu { text-align: center; }
 
   #menu h1 {
     font-family: 'Source Serif 4', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.6rem;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.3rem;
+    font-weight: 600; font-size: 1.6rem;
+    letter-spacing: -0.02em; margin-bottom: 0.3rem;
   }
 
-  #menu .subtitle {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 1.75rem;
+  .subtitle {
+    font-size: 0.85rem; color: var(--text-muted);
   }
 
-  .lecture-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
+  .subtitle.course-code { margin-bottom: 0.3rem; }
+  .subtitle.tagline { margin-bottom: 0.5rem; }
+
+  .lecture-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
 
   .lecture-list button {
-    width: 100%;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-align: left;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    cursor: pointer;
+    width: 100%; font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.95rem; font-weight: 500; text-align: left;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1rem 1.25rem; cursor: pointer;
     transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
-    color: var(--text);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
 
   .lecture-list button:hover {
-    background: var(--accent-light);
-    border-color: var(--accent);
+    background: var(--accent-light); border-color: var(--accent);
     box-shadow: var(--shadow);
   }
 
-  .lecture-list button .num {
+  .lecture-list .num {
     font-family: 'Source Serif 4', Georgia, serif;
-    font-weight: 600;
-    color: var(--accent);
-    margin-right: 0.5rem;
+    font-weight: 600; color: var(--accent); margin-right: 0.5rem;
   }
 
-  .lecture-list button .topic {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-  }
+  .lecture-list .topic { color: var(--text-muted); font-size: 0.85rem; }
 
-  /* ── Quiz screen ── */
+  /* ── Mode picker ── */
 
-  #quiz { display: none; width: 100%; max-width: 480px; }
+  #mode-picker { text-align: center; }
 
-  #quiz header { text-align: center; margin-bottom: 2rem; }
-
-  #quiz header h1 {
+  #mode-picker h1 {
     font-family: 'Source Serif 4', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.4rem;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.25rem;
+    font-weight: 600; font-size: 1.4rem;
+    letter-spacing: -0.02em; margin-bottom: 0.25rem;
   }
 
-  .counter {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-variant-numeric: tabular-nums;
+  #mode-picker .topic-sub {
+    font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem;
   }
+
+  .mode-buttons {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  }
+
+  .mode-btn {
+    flex: 1; min-width: 180px; max-width: 220px;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.5rem 1.25rem; cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04); text-align: center;
+  }
+
+  .mode-btn:hover {
+    background: var(--accent-light); border-color: var(--accent);
+    box-shadow: var(--shadow);
+  }
+
+  .mode-btn .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .mode-btn .mode-label { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .mode-btn .mode-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; }
+
+  .back-link {
+    display: inline-block; margin-top: 1.5rem;
+    font-size: 0.82rem; color: var(--text-muted);
+    cursor: pointer; border: none; background: none;
+    font-family: inherit; text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .back-link:hover { color: var(--accent); }
+
+  /* ── Shared header ── */
+
+  .activity-header { text-align: center; margin-bottom: 2rem; }
+
+  .activity-header h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600; font-size: 1.3rem;
+    letter-spacing: -0.02em; margin-bottom: 0.25rem;
+  }
+
+  .counter { font-size: 0.85rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 
   .progress-bar {
-    width: 100%;
-    height: 3px;
-    background: var(--border);
-    border-radius: 2px;
-    margin-top: 0.75rem;
-    overflow: hidden;
+    width: 100%; height: 3px; background: var(--border);
+    border-radius: 2px; margin-top: 0.75rem; overflow: hidden;
   }
 
   .progress-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 2px;
-    transition: width 0.35s ease;
+    height: 100%; background: var(--accent);
+    border-radius: 2px; transition: width 0.35s ease;
   }
 
-  /* Card */
+  /* ── Flashcard ── */
+
   .card-scene {
-    perspective: 900px;
-    width: 100%;
-    height: 300px;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+    perspective: 900px; width: 100%; height: 300px;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
   }
 
   .card {
-    width: 100%;
-    height: 100%;
-    position: relative;
+    width: 100%; height: 100%; position: relative;
     transform-style: preserve-3d;
     transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
   }
@@ -160,324 +172,508 @@ MathJax = {
   .card.flipped { transform: rotateY(180deg); }
 
   .card-face {
-    position: absolute;
-    inset: 0;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    position: absolute; inset: 0;
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
     border-radius: var(--radius);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 2.25rem;
-    text-align: center;
-    box-shadow: var(--shadow);
-    overflow-y: auto;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 2rem 2.25rem; text-align: center;
+    box-shadow: var(--shadow); overflow-y: auto;
   }
 
-  .card-front {
-    background: var(--surface);
-    border: 1px solid var(--border);
-  }
+  .card-front { background: var(--surface); border: 1px solid var(--border); }
 
-  .card-front .label {
-    position: absolute;
-    top: 1rem; left: 1.25rem;
+  .card-face .label {
+    position: absolute; top: 1rem; left: 1.25rem;
     font-size: 0.7rem; font-weight: 600;
     text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 0.2em 0.6em;
-    border-radius: 4px;
+    padding: 0.2em 0.6em; border-radius: 4px;
   }
+
+  .card-front .label { color: var(--accent); background: var(--accent-light); }
 
   .card-front .content {
     font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1.1rem; line-height: 1.6;
   }
 
-  .card-back {
-    background: var(--surface-back);
-    color: var(--text-back);
-    transform: rotateY(180deg);
+  .card-back { background: var(--surface-back); color: var(--text-back); transform: rotateY(180deg); }
+  .card-back .label { color: rgba(255,255,255,0.45); background: transparent; }
+  .card-back .content { font-size: 1.05rem; line-height: 1.6; }
+
+  .hint-text {
+    font-size: 0.75rem; color: var(--text-muted);
+    margin-top: 1rem; text-align: center; transition: opacity 0.3s;
   }
 
-  .card-back .label {
-    position: absolute;
-    top: 1rem; left: 1.25rem;
-    font-size: 0.7rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.45);
-  }
+  /* ── Quiz ── */
 
-  .card-back .content {
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-
-  .hint {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 1rem;
+  .quiz-question {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 2rem 2.25rem;
+    box-shadow: var(--shadow); margin-bottom: 1.25rem;
     text-align: center;
-    transition: opacity 0.3s;
   }
 
-  /* Nav */
+  .quiz-question .content {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.1rem; line-height: 1.6;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+
+  .option-btn {
+    width: 100%; font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem; text-align: left; line-height: 1.5;
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: 10px; padding: 0.85rem 1.1rem; cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    color: var(--text);
+  }
+
+  .option-btn:hover:not(.locked) {
+    background: var(--accent-light); border-color: var(--accent);
+  }
+
+  .option-btn.locked { cursor: default; }
+  .option-btn.correct { background: var(--correct-light); border-color: var(--correct); color: var(--correct); }
+  .option-btn.wrong { background: var(--wrong-light); border-color: var(--wrong); color: var(--wrong); }
+  .option-btn.dimmed { opacity: 0.45; }
+
+  .rationale {
+    font-size: 0.82rem; color: var(--text-muted);
+    margin-top: 0.5rem; padding: 0.5rem 0.75rem;
+    line-height: 1.5; display: none;
+  }
+
+  .rationale.visible { display: block; }
+
+  .quiz-hint-btn {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8rem; color: var(--accent); background: none;
+    border: 1px dashed var(--border); border-radius: 8px;
+    padding: 0.45rem 0.9rem; cursor: pointer;
+    transition: border-color 0.15s;
+  }
+
+  .quiz-hint-btn:hover { border-color: var(--accent); }
+  .quiz-hint-btn:disabled { opacity: 0.4; cursor: default; }
+
+  .quiz-hint-text {
+    font-size: 0.82rem; color: var(--text-muted);
+    margin-top: 0.5rem; font-style: italic;
+    line-height: 1.5; display: none;
+  }
+
+  .quiz-hint-text.visible { display: block; }
+
+  .score-bar {
+    text-align: center; font-size: 0.85rem;
+    color: var(--text-muted); margin-bottom: 1rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Nav ── */
+
   .nav {
-    display: flex;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex; gap: 0.6rem; margin-top: 1.5rem;
+    align-items: center; justify-content: center; flex-wrap: wrap;
   }
 
   .nav button {
     font-family: 'Inter', system-ui, sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text);
-    padding: 0.55rem 1.15rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.15s, border-color 0.15s;
+    font-size: 0.85rem; font-weight: 500;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--text); padding: 0.55rem 1.15rem; border-radius: 10px;
+    cursor: pointer; transition: background 0.15s, border-color 0.15s;
     user-select: none;
   }
 
-  .nav button:hover {
-    background: var(--accent-light);
-    border-color: var(--accent);
-  }
-
-  .nav button:disabled {
-    opacity: 0.35; cursor: default;
-  }
-
-  .nav button:disabled:hover {
-    background: var(--surface);
-    border-color: var(--border);
-  }
-
+  .nav button:hover { background: var(--accent-light); border-color: var(--accent); }
+  .nav button:disabled { opacity: 0.35; cursor: default; }
+  .nav button:disabled:hover { background: var(--surface); border-color: var(--border); }
   .nav button.shuffle { border-style: dashed; }
-  .nav button.back-btn { border-style: solid; color: var(--text-muted); }
+  .nav button.back-btn { color: var(--text-muted); }
 
   .kbd-hint {
-    margin-top: 2rem;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    text-align: center;
-    line-height: 1.7;
+    margin-top: 2rem; font-size: 0.72rem;
+    color: var(--text-muted); text-align: center; line-height: 1.7;
   }
 
   kbd {
-    display: inline-block;
-    font-family: inherit;
-    font-size: 0.7rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 0.1em 0.45em;
-    margin: 0 0.1em;
+    display: inline-block; font-family: inherit; font-size: 0.7rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; padding: 0.1em 0.45em; margin: 0 0.1em;
   }
 
   .error {
-    text-align: center;
-    color: #a04040;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    text-align: center; color: var(--wrong);
+    margin-top: 1.5rem; font-size: 0.9rem; line-height: 1.6;
   }
 
   @media (max-width: 520px) {
     .card-scene { height: 260px; }
     .card-face { padding: 1.5rem; }
     .card-front .content { font-size: 1rem; }
+    .quiz-question { padding: 1.5rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- ── Lecture menu ── -->
-<div id="menu">
-  <p class="subtitle" style="margin-bottom:0.3rem">LSE EC200</p>
+<!-- ── Screen 1: Lecture menu ── -->
+<div class="screen active" id="menu">
+  <p class="subtitle course-code">LSE EC200</p>
   <h1>Behavioural Economics</h1>
-  <p class="subtitle">Summer School Flashcards</p>
+  <p class="subtitle tagline">Summer School Flashcards &amp; Quizzes</p>
+  <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:1.75rem; line-height:1.5; max-width:380px; margin-left:auto; margin-right:auto;">All questions and answers were generated by AI and may contain errors. Use these as a study aid, not a definitive source.</p>
   <ul class="lecture-list" id="lecture-list"></ul>
 </div>
 
-<!-- ── Quiz view ── -->
-<div id="quiz">
-  <header>
-    <h1 id="quiz-title"></h1>
-    <div class="counter" id="counter"></div>
-    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
-  </header>
+<!-- ── Screen 2: Mode picker ── -->
+<div class="screen" id="mode-picker">
+  <h1 id="mode-title"></h1>
+  <p class="topic-sub" id="mode-topic"></p>
+  <div class="mode-buttons">
+    <button class="mode-btn" id="btn-flashcards">
+      <div class="icon">📇</div>
+      <div class="mode-label">Flashcards</div>
+      <div class="mode-desc">Flip through key concepts at your own pace</div>
+    </button>
+    <button class="mode-btn" id="btn-quiz">
+      <div class="icon">✏️</div>
+      <div class="mode-label">Quiz</div>
+      <div class="mode-desc">Test yourself with multiple choice questions</div>
+    </button>
+  </div>
+  <button class="back-link" id="mode-back">← All lectures</button>
+</div>
 
-  <div class="card-scene" id="scene">
-    <div class="card" id="card">
+<!-- ── Screen 3: Flashcards ── -->
+<div class="screen" id="flashcard-screen">
+  <div class="activity-header">
+    <h1 id="fc-title"></h1>
+    <div class="counter" id="fc-counter"></div>
+    <div class="progress-bar"><div class="progress-fill" id="fc-progress"></div></div>
+  </div>
+  <div class="card-scene" id="fc-scene">
+    <div class="card" id="fc-card">
       <div class="card-face card-front">
         <span class="label">Question</span>
-        <div class="content" id="front"></div>
+        <div class="content" id="fc-front"></div>
       </div>
       <div class="card-face card-back">
         <span class="label">Answer</span>
-        <div class="content" id="back"></div>
+        <div class="content" id="fc-back"></div>
       </div>
     </div>
   </div>
-  <div class="hint" id="hint">tap to flip</div>
-
+  <div class="hint-text" id="fc-hint">tap to flip</div>
   <div class="nav">
-    <button id="prev">← Prev</button>
-    <button id="shuffle" class="shuffle">Shuffle</button>
-    <button id="next">Next →</button>
-    <button id="back-btn" class="back-btn">All Lectures</button>
+    <button id="fc-prev">← Prev</button>
+    <button id="fc-shuffle" class="shuffle">Shuffle</button>
+    <button id="fc-next">Next →</button>
+    <button id="fc-back" class="back-btn">Back</button>
   </div>
-
   <div class="kbd-hint">
     <kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>Space</kbd> flip · <kbd>S</kbd> shuffle · <kbd>Esc</kbd> back
   </div>
+  <div class="error" id="fc-error" style="display:none"></div>
+</div>
 
-  <div class="error" id="error" style="display:none"></div>
+<!-- ── Screen 4: Quiz ── -->
+<div class="screen" id="quiz-screen">
+  <div class="activity-header">
+    <h1 id="qz-title"></h1>
+    <div class="counter" id="qz-counter"></div>
+    <div class="progress-bar"><div class="progress-fill" id="qz-progress"></div></div>
+  </div>
+  <div class="score-bar" id="qz-score"></div>
+  <div class="quiz-question">
+    <div class="content" id="qz-question"></div>
+  </div>
+  <div class="options" id="qz-options"></div>
+  <div style="text-align:center">
+    <button class="quiz-hint-btn" id="qz-hint-btn">Show hint</button>
+    <div class="quiz-hint-text" id="qz-hint-text"></div>
+  </div>
+  <div class="nav">
+    <button id="qz-prev">← Prev</button>
+    <button id="qz-next">Next →</button>
+    <button id="qz-back" class="back-btn">Back</button>
+  </div>
+  <div class="kbd-hint">
+    <kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>H</kbd> hint · <kbd>Esc</kbd> back
+  </div>
+  <div class="error" id="qz-error" style="display:none"></div>
 </div>
 
 <script>
+/* ── Config ── */
 const LECTURES = [
-  { file: 'lecture_1.json', label: 'Lecture 1', topic: 'Anticipatory Utility' },
-  { file: 'lecture_2.json', label: 'Lecture 2', topic: 'Reference-Dependent Preferences' },
-  { file: 'lecture_3.json', label: 'Lecture 3', topic: 'Heuristics and Biases' },
-  { file: 'lecture_4.json', label: 'Lecture 4', topic: 'Behavioural Game Theory' },
-  { file: 'lecture_5.json', label: 'Lecture 5', topic: 'Social Preferences' },
-  { file: 'lecture_6.json', label: 'Lecture 6', topic: 'Adaptation and Projection' },
+  { n: 1, label: 'Lecture 1', topic: 'Anticipatory Utility' },
+  { n: 2, label: 'Lecture 2', topic: 'Reference-Dependent Preferences' },
+  { n: 3, label: 'Lecture 3', topic: 'Heuristics and Biases' },
+  { n: 4, label: 'Lecture 4', topic: 'Behavioural Game Theory' },
+  { n: 5, label: 'Lecture 5', topic: 'Social Preferences' },
+  { n: 6, label: 'Lecture 6', topic: 'Adaptation and Projection' },
 ];
 
+/* ── Helpers ── */
 const $ = id => document.getElementById(id);
-const menuEl = $('menu'), quizEl = $('quiz');
-const listEl = $('lecture-list');
-const scene = $('scene'), card = $('card');
-const frontEl = $('front'), backEl = $('back');
-const counterEl = $('counter'), progressEl = $('progress');
-const hintEl = $('hint'), titleEl = $('quiz-title');
-const prevBtn = $('prev'), nextBtn = $('next');
-const shuffleBtn = $('shuffle'), backBtn = $('back-btn');
-const errorEl = $('error');
-
-let cards = [], idx = 0;
-
-// Build menu
-LECTURES.forEach((lec, i) => {
-  const li = document.createElement('li');
-  const btn = document.createElement('button');
-  btn.innerHTML = `<span class="num">${lec.label}</span> <span class="topic">${lec.topic}</span>`;
-  btn.addEventListener('click', () => loadLecture(i));
-  li.appendChild(btn);
-  listEl.appendChild(li);
-});
-
-async function loadLecture(i) {
-  const lec = LECTURES[i];
-  errorEl.style.display = 'none';
-
-  try {
-    const res = await fetch(lec.file);
-    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-    const data = await res.json();
-    cards = (data.flashcards || data).filter(c => !c.deleted);
-    if (!cards.length) throw new Error('No flashcards found.');
-  } catch (e) {
-    errorEl.textContent = `Could not load ${lec.file} — ${e.message}`;
-    errorEl.style.display = 'block';
-    return;
-  }
-
-  titleEl.textContent = `${lec.label}: ${lec.topic}`;
-  idx = 0;
-  menuEl.style.display = 'none';
-  quizEl.style.display = 'block';
-  render();
-}
-
-function showMenu() {
-  quizEl.style.display = 'none';
-  menuEl.style.display = 'block';
-  errorEl.style.display = 'none';
-}
+let currentLecture = null;
 
 function sanitize(s) {
   return s
-    // Text formatting commands
     .replace(/\\textbf\{([^}]*)\}/g, '<b>$1</b>')
     .replace(/\\textit\{([^}]*)\}/g, '<i>$1</i>')
     .replace(/\\emph\{([^}]*)\}/g, '<i>$1</i>')
     .replace(/\\underline\{([^}]*)\}/g, '<u>$1</u>')
-    // Symbols outside math mode
     .replace(/\\pounds\b/g, '£')
     .replace(/\\euro\b/g, '€')
     .replace(/\\yen\b/g, '¥')
     .replace(/\\degree\b/g, '°')
     .replace(/\\ldots\b/g, '…')
     .replace(/\\dots\b/g, '…')
-    // Escaped special characters
     .replace(/\\%/g, '%')
     .replace(/\\&/g, '&amp;')
     .replace(/\\#/g, '#')
     .replace(/\\_/g, '_')
-    // Line breaks
-    .replace(/\\\\/g, '<br>')
-
+    .replace(/\\\\/g, '<br>');
 }
 
-function render() {
-  const c = cards[idx];
-  card.classList.remove('flipped');
-  frontEl.innerHTML = sanitize(c.f);
-  backEl.innerHTML = sanitize(c.b);
-  counterEl.textContent = `${idx + 1} / ${cards.length}`;
-  progressEl.style.width = `${((idx + 1) / cards.length) * 100}%`;
-  prevBtn.disabled = idx === 0;
-  nextBtn.disabled = idx === cards.length - 1;
-  hintEl.style.opacity = '1';
-  if (window.MathJax?.typesetPromise) MathJax.typesetPromise([frontEl, backEl]);
+function typeset(el) {
+  if (window.MathJax?.typesetPromise) MathJax.typesetPromise([el]);
 }
 
-function flip() {
-  card.classList.toggle('flipped');
-  hintEl.style.opacity = '0';
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  $(id).classList.add('active');
 }
 
-function go(d) {
-  const n = idx + d;
-  if (n < 0 || n >= cards.length) return;
-  idx = n;
-  render();
-}
-
-function shuffle() {
-  for (let i = cards.length - 1; i > 0; i--) {
+function fisherYates(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [cards[i], cards[j]] = [cards[j], cards[i]];
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-  idx = 0;
-  render();
 }
 
-scene.addEventListener('click', flip);
-prevBtn.addEventListener('click', () => go(-1));
-nextBtn.addEventListener('click', () => go(1));
-shuffleBtn.addEventListener('click', shuffle);
-backBtn.addEventListener('click', showMenu);
+/* ── Build lecture menu ── */
+const listEl = $('lecture-list');
+LECTURES.forEach((lec, i) => {
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  btn.innerHTML = `<span class="num">${lec.label}</span> <span class="topic">${lec.topic}</span>`;
+  btn.addEventListener('click', () => pickLecture(i));
+  li.appendChild(btn);
+  listEl.appendChild(li);
+});
 
+function pickLecture(i) {
+  currentLecture = LECTURES[i];
+  $('mode-title').textContent = currentLecture.label;
+  $('mode-topic').textContent = currentLecture.topic;
+  showScreen('mode-picker');
+}
+
+$('mode-back').addEventListener('click', () => showScreen('menu'));
+$('btn-flashcards').addEventListener('click', () => launchFlashcards());
+$('btn-quiz').addEventListener('click', () => launchQuiz());
+
+/* ═══════════════════════════════════════
+   FLASHCARDS
+   ═══════════════════════════════════════ */
+let fcCards = [], fcIdx = 0;
+
+async function launchFlashcards() {
+  const file = `lecture_${currentLecture.n}.json`;
+  $('fc-error').style.display = 'none';
+  try {
+    const res = await fetch(file);
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    const data = await res.json();
+    fcCards = (data.flashcards || data).filter(c => !c.deleted);
+    if (!fcCards.length) throw new Error('No flashcards found.');
+  } catch (e) {
+    showScreen('flashcard-screen');
+    $('fc-error').textContent = `Could not load ${file} — ${e.message}`;
+    $('fc-error').style.display = 'block';
+    return;
+  }
+  $('fc-title').textContent = `${currentLecture.label}: ${currentLecture.topic}`;
+  fcIdx = 0;
+  showScreen('flashcard-screen');
+  renderFc();
+}
+
+function renderFc() {
+  const c = fcCards[fcIdx];
+  $('fc-card').classList.remove('flipped');
+  $('fc-front').innerHTML = sanitize(c.f);
+  $('fc-back').innerHTML = sanitize(c.b);
+  $('fc-counter').textContent = `${fcIdx + 1} / ${fcCards.length}`;
+  $('fc-progress').style.width = `${((fcIdx + 1) / fcCards.length) * 100}%`;
+  $('fc-prev').disabled = fcIdx === 0;
+  $('fc-next').disabled = fcIdx === fcCards.length - 1;
+  $('fc-hint').style.opacity = '1';
+  typeset($('fc-front')); typeset($('fc-back'));
+}
+
+function fcFlip() {
+  $('fc-card').classList.toggle('flipped');
+  $('fc-hint').style.opacity = '0';
+}
+
+function fcGo(d) {
+  const n = fcIdx + d;
+  if (n < 0 || n >= fcCards.length) return;
+  fcIdx = n; renderFc();
+}
+
+function fcShuffle() { fisherYates(fcCards); fcIdx = 0; renderFc(); }
+
+$('fc-scene').addEventListener('click', fcFlip);
+$('fc-prev').addEventListener('click', () => fcGo(-1));
+$('fc-next').addEventListener('click', () => fcGo(1));
+$('fc-shuffle').addEventListener('click', fcShuffle);
+$('fc-back').addEventListener('click', () => showScreen('mode-picker'));
+
+/* ═══════════════════════════════════════
+   QUIZ
+   ═══════════════════════════════════════ */
+let qzItems = [], qzIdx = 0, qzAnswered = [], qzScore = 0;
+
+async function launchQuiz() {
+  const file = `quiz_${currentLecture.n}.json`;
+  $('qz-error').style.display = 'none';
+  try {
+    const res = await fetch(file);
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    const data = await res.json();
+    qzItems = (data.quiz || data).filter(q => q.answerOptions?.length > 0);
+    if (!qzItems.length) throw new Error('No quiz questions found.');
+  } catch (e) {
+    showScreen('quiz-screen');
+    $('qz-error').textContent = `Could not load ${file} — ${e.message}`;
+    $('qz-error').style.display = 'block';
+    return;
+  }
+  $('qz-title').textContent = `${currentLecture.label}: ${currentLecture.topic}`;
+  qzIdx = 0; qzScore = 0;
+  qzAnswered = new Array(qzItems.length).fill(null);
+  showScreen('quiz-screen');
+  renderQz();
+}
+
+function renderQz() {
+  const q = qzItems[qzIdx];
+  const answered = qzAnswered[qzIdx];
+
+  // Question
+  $('qz-question').innerHTML = sanitize(q.question);
+  typeset($('qz-question'));
+
+  // Counter + progress
+  $('qz-counter').textContent = `${qzIdx + 1} / ${qzItems.length}`;
+  $('qz-progress').style.width = `${((qzIdx + 1) / qzItems.length) * 100}%`;
+
+  // Score
+  const totalAnswered = qzAnswered.filter(a => a !== null).length;
+  $('qz-score').textContent = totalAnswered > 0
+    ? `${qzScore} / ${totalAnswered} correct`
+    : '';
+
+  // Options
+  const container = $('qz-options');
+  container.innerHTML = '';
+  q.answerOptions.forEach((opt, oi) => {
+    const wrapper = document.createElement('div');
+
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = sanitize(opt.text);
+
+    const rat = document.createElement('div');
+    rat.className = 'rationale';
+    rat.innerHTML = sanitize(opt.rationale || '');
+
+    if (answered !== null) {
+      btn.classList.add('locked');
+      if (opt.isCorrect) {
+        btn.classList.add('correct');
+      } else if (oi === answered && !opt.isCorrect) {
+        btn.classList.add('wrong');
+      } else {
+        btn.classList.add('dimmed');
+      }
+      rat.classList.add('visible');
+      typeset(rat);
+    } else {
+      btn.addEventListener('click', () => answerQz(oi));
+    }
+
+    typeset(btn);
+    wrapper.appendChild(btn);
+    wrapper.appendChild(rat);
+    container.appendChild(wrapper);
+  });
+
+  // Hint
+  const hintBtn = $('qz-hint-btn');
+  const hintText = $('qz-hint-text');
+  hintText.classList.remove('visible');
+  hintText.innerHTML = sanitize(q.hint || '');
+  hintBtn.disabled = !q.hint;
+  if (answered !== null && q.hint) {
+    hintText.classList.add('visible');
+    typeset(hintText);
+  }
+
+  // Nav
+  $('qz-prev').disabled = qzIdx === 0;
+  $('qz-next').disabled = qzIdx === qzItems.length - 1;
+}
+
+function answerQz(chosen) {
+  if (qzAnswered[qzIdx] !== null) return;
+  qzAnswered[qzIdx] = chosen;
+  if (qzItems[qzIdx].answerOptions[chosen].isCorrect) qzScore++;
+  renderQz();
+}
+
+function qzGo(d) {
+  const n = qzIdx + d;
+  if (n < 0 || n >= qzItems.length) return;
+  qzIdx = n; renderQz();
+}
+
+$('qz-hint-btn').addEventListener('click', () => {
+  const ht = $('qz-hint-text');
+  ht.classList.toggle('visible');
+  typeset(ht);
+});
+$('qz-prev').addEventListener('click', () => qzGo(-1));
+$('qz-next').addEventListener('click', () => qzGo(1));
+$('qz-back').addEventListener('click', () => showScreen('mode-picker'));
+
+/* ── Keyboard ── */
 document.addEventListener('keydown', e => {
-  if (quizEl.style.display === 'none') return;
-  if (e.key === 'ArrowLeft') go(-1);
-  else if (e.key === 'ArrowRight') go(1);
-  else if (e.key === ' ') { e.preventDefault(); flip(); }
-  else if (e.key.toLowerCase() === 's') shuffle();
-  else if (e.key === 'Escape') showMenu();
+  const fc = $('flashcard-screen').classList.contains('active');
+  const qz = $('quiz-screen').classList.contains('active');
+  if (fc) {
+    if (e.key === 'ArrowLeft') fcGo(-1);
+    else if (e.key === 'ArrowRight') fcGo(1);
+    else if (e.key === ' ') { e.preventDefault(); fcFlip(); }
+    else if (e.key.toLowerCase() === 's') fcShuffle();
+    else if (e.key === 'Escape') showScreen('mode-picker');
+  } else if (qz) {
+    if (e.key === 'ArrowLeft') qzGo(-1);
+    else if (e.key === 'ArrowRight') qzGo(1);
+    else if (e.key.toLowerCase() === 'h') $('qz-hint-btn').click();
+    else if (e.key === 'Escape') showScreen('mode-picker');
+  } else if ($('mode-picker').classList.contains('active')) {
+    if (e.key === 'Escape') showScreen('menu');
+  }
 });
 </script>
 </body>

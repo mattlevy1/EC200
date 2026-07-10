@@ -1,0 +1,283 @@
+
+{
+  "quiz": [
+    {
+      "question": "In the context of game theory, which of the following best defines a player's 'Best-Response'?",
+      "answerOptions": [
+        {
+          "text": "The strategy that maximizes the total payoff for all players involved in the game.",
+          "isCorrect": false,
+          "rationale": "This describes a socially optimal or cooperative outcome, whereas a best-response is focused on an individual player's utility."
+        },
+        {
+          "text": "The strategy that yields the highest utility for an agent, given the strategies chosen by all other players.",
+          "isCorrect": true,
+          "rationale": "A best-response $s_i^*$ ensures that $\\pi_i(s_i^*, s_{-i}) \\ge \\pi_i(s'_i, s_{-i})$ for any other possible action $s'_i$."
+        },
+        {
+          "text": "The strategy that minimizes the maximum possible loss the player could face.",
+          "isCorrect": false,
+          "rationale": "This describes a 'minimax' strategy, which is distinct from a best-response that assumes the specific actions of others are given."
+        },
+        {
+          "text": "The strategy that a player chooses when they assume all other players are acting irrationally.",
+          "isCorrect": false,
+          "rationale": "Best-responses are calculated based on the actual or expected strategies of others, regardless of whether those strategies are rational."
+        }
+      ],
+      "hint": "Consider the mathematical definition involving the utility function $\\pi_i$ and the strategy profile $s_{-i}$."
+    },
+    {
+      "question": "In a dynamic game like Stackelberg competition where Player 1 chooses first ($H$ or $L$) and Player 2 follows ($h$ or $l$), how many total strategies does Player 2 have?",
+      "answerOptions": [
+        {
+          "text": "2",
+          "isCorrect": false,
+          "rationale": "While there are only two physical actions, a strategy in a dynamic game must be a complete contingent plan for every possible history."
+        },
+        {
+          "text": "4",
+          "isCorrect": true,
+          "rationale": "Player 2 must decide an action for both the case where P1 chose $H$ and the case where P1 chose $L$, leading to $2^2$ combinations."
+        },
+        {
+          "text": "8",
+          "isCorrect": false,
+          "rationale": "This overestimates the number of contingent plans available given that there are only two nodes where Player 2 makes a choice."
+        },
+        {
+          "text": "1",
+          "isCorrect": false,
+          "rationale": "A single action does not constitute a strategy in a dynamic game unless it covers all possible move scenarios by the opponent."
+        }
+      ],
+      "hint": "Remember that a strategy is a 'complete action plan' conditional on the first player's choice."
+    },
+    {
+      "question": "What is the unique Nash Equilibrium for the 'Beauty Contest' game where players choose a number between 0 and 100 to get closest to $2/3$ of the average?",
+      "answerOptions": [
+        {
+          "text": "33.3",
+          "isCorrect": false,
+          "rationale": "This is the choice of a Level-1 player who assumes others are picking randomly, not an equilibrium where no one wants to deviate."
+        },
+        {
+          "text": "50",
+          "isCorrect": false,
+          "rationale": "Fifty is the expected average of random guesses between 0 and 100, representing a starting point for reasoning rather than an equilibrium."
+        },
+        {
+          "text": "0",
+          "isCorrect": true,
+          "rationale": "If everyone guesses 0, the average is 0 and $2/3$ of 0 is 0; no player can improve their payoff by choosing a higher number."
+        },
+        {
+          "text": "22.2",
+          "isCorrect": false,
+          "rationale": "This represents a Level-2 reasoning step ($2/3$ of 33.3) rather than the final steady-state equilibrium."
+        }
+      ],
+      "hint": "Consider what happens when everyone performs infinite rounds of iterated deletion of dominated strategies."
+    },
+    {
+      "question": "According to the Level-k model, how does a Level-1 player behave in a $p$-beauty contest?",
+      "answerOptions": [
+        {
+          "text": "They assume everyone else is Level-1 and choose a number $p$ times their expected average.",
+          "isCorrect": false,
+          "rationale": "Level-k players always assume their opponents are exactly one level below them, not at the same level."
+        },
+        {
+          "text": "They choose a number randomly from a uniform distribution between 0 and 100.",
+          "isCorrect": false,
+          "rationale": "This describes a Level-0 player, who acts as the foundation for higher-level strategic reasoning."
+        },
+        {
+          "text": "They best-respond to the belief that all other players are Level-0 and randomizing.",
+          "isCorrect": true,
+          "rationale": "Level-1 thinkers assume a non-strategic (random) population and calculate their best move based on that average."
+        },
+        {
+          "text": "They choose 0, following the prediction of Nash Equilibrium.",
+          "isCorrect": false,
+          "rationale": "Level-k models specifically relax the assumption that strategies are common knowledge, often leading away from Nash predictions."
+        }
+      ],
+      "hint": "Identify who a Level-1 player believes their opponents are."
+    },
+    {
+      "question": "In the Battle of the Sexes game, what is the predicted outcome if both players are Level-2 thinkers?",
+      "answerOptions": [
+        {
+          "text": "They successfully coordinate on the favorite activity of Partner 1.",
+          "isCorrect": false,
+          "rationale": "Coordination requires matching levels or specific beliefs that allow for alignment, which is not guaranteed by uniform Level-2 thinking."
+        },
+        {
+          "text": "They successfully coordinate on the favorite activity of Partner 2.",
+          "isCorrect": false,
+          "rationale": "Level-2 thinkers expect their partner to go to the partner's own favorite, causing them to switch, often leading to mis-coordination."
+        },
+        {
+          "text": "They both go to the other partner's favorite activity, resulting in a mismatch.",
+          "isCorrect": true,
+          "rationale": "A Level-2 Partner 1 thinks P2 is Level-1 (who goes to their own favorite), so P1 goes to P2's favorite; if P2 does the same, they swap and miss each other."
+        },
+        {
+          "text": "They randomize their choices 50-50.",
+          "isCorrect": false,
+          "rationale": "Randomization is the behavior of Level-0 players; Level-2 players are best-responding to a specific belief about Level-1 behavior."
+        }
+      ],
+      "hint": "Level-2 thinkers expect their partners to be Level-1, who are 'selfish' in their coordination preferences."
+    },
+    {
+      "question": "Which statement best describes the 'counterintuitive logic' of Mixed-Strategy Nash Equilibrium?",
+      "answerOptions": [
+        {
+          "text": "Players choose actions to maximize their own payoff regardless of what the opponent does.",
+          "isCorrect": false,
+          "rationale": "This ignores the strategic interdependence that defines Nash Equilibrium."
+        },
+        {
+          "text": "A player's randomization probabilities are chosen to make the opponent indifferent between their own actions.",
+          "isCorrect": true,
+          "rationale": "In a mixed equilibrium, your probabilities must be set so that the opponent has no incentive to favor one action over another."
+        },
+        {
+          "text": "If a player becomes more skilled at one action, they will always perform that action more frequently.",
+          "isCorrect": false,
+          "rationale": "As seen in the penalty kick example, an improvement in one area might force the player to use the *other* area more to keep the opponent guessing."
+        },
+        {
+          "text": "Players only use mixed strategies when they are uncertain about the rules of the game.",
+          "isCorrect": false,
+          "rationale": "Mixed strategies are used in games with no pure-strategy equilibrium to prevent predictability, even when rules are perfectly known."
+        }
+      ],
+      "hint": "Think about how your choice affects your opponent's incentives to deviate."
+    },
+    {
+      "question": "What does a 'Cursed Equilibrium' assume about the behavior of buyers in a market with asymmetric information, such as the 'Market for Lemons'?",
+      "answerOptions": [
+        {
+          "text": "Buyers correctly anticipate that only sellers with low-quality goods will stay in the market at low prices.",
+          "isCorrect": false,
+          "rationale": "This describes the rational Nash/Akerlof prediction, which lead to market unraveling."
+        },
+        {
+          "text": "Buyers ignore the correlation between a seller's private information and their willingness to trade.",
+          "isCorrect": true,
+          "rationale": "Cursed buyers fail to realize that the act of selling at a certain price is itself a signal of the car's low quality."
+        },
+        {
+          "text": "Buyers assume all sellers are hyper-rational and will only sell peaches.",
+          "isCorrect": false,
+          "rationale": "This contradicts the logic of the lemon market, where peaches are harder to sell due to price ceilings."
+        },
+        {
+          "text": "Buyers believe that the price is set by a neutral third party rather than the seller.",
+          "isCorrect": false,
+          "rationale": "Cursed equilibrium is specifically about the failure to infer private information from actions, not about the price-setting mechanism."
+        }
+      ],
+      "hint": "Focus on the link between an opponent's 'hidden knowledge' and their 'observable choice'."
+    },
+    {
+      "question": "In common-value auctions, why do rational bidders bid strictly below their own private estimates of an item's value?",
+      "answerOptions": [
+        {
+          "text": "Because they are risk-averse and want to ensure a profit.",
+          "isCorrect": false,
+          "rationale": "While risk aversion might play a role, the strategic reason is to avoid the Winner's Curse, even for risk-neutral bidders."
+        },
+        {
+          "text": "To account for the fact that winning implies their private signal was the most optimistic (and likely an overestimate).",
+          "isCorrect": true,
+          "rationale": "Winning provides the information that everyone else had lower signals; if you don't adjust for this, you likely overpaid."
+        },
+        {
+          "text": "Because they assume other bidders are Level-0 and bidding randomly.",
+          "isCorrect": false,
+          "rationale": "Level-k models might explain why people *don't* bid low enough, but the rational prediction assumes others are also bidding strategically."
+        },
+        {
+          "text": "To discourage other bidders from participating in future auctions.",
+          "isCorrect": false,
+          "rationale": "Bidding low is a response to information reveals within the current auction, not necessarily a long-term predatory strategy."
+        }
+      ],
+      "hint": "Think about what the event of 'winning' tells you about the signals received by your competitors."
+    },
+    {
+      "question": "According to research by Palacios-Huerta (2003) on professional footballers, how does their behavior compare to Nash Equilibrium predictions?",
+      "answerOptions": [
+        {
+          "text": "They fail to randomize effectively, showing clear patterns that opponents exploit.",
+          "isCorrect": false,
+          "rationale": "The study found that professionals are remarkably good at achieving the unpredictability required by theory."
+        },
+        {
+          "text": "They almost perfectly follow the predictions of mixed-strategy Nash Equilibrium.",
+          "isCorrect": true,
+          "rationale": "Professional players in high-stakes, familiar environments tend to converge on equilibrium behavior through extensive experience."
+        },
+        {
+          "text": "They consistently play their 'Level-1' best response rather than an equilibrium.",
+          "isCorrect": false,
+          "rationale": "While Level-k applies in many settings, the data for professional football penalties aligns more closely with equilibrium models."
+        },
+        {
+          "text": "They coordinate on a single strategy to minimize the physical risk of injury.",
+          "isCorrect": false,
+          "rationale": "The game is inherently competitive (zero-sum in scoring), making coordination on a single strategy non-viable."
+        }
+      ],
+      "hint": "Consider the difference between experienced professionals in their natural environment versus subjects in a lab."
+    },
+    {
+      "question": "What is the primary difference between Nash Equilibrium and the Level-k model as solution concepts?",
+      "answerOptions": [
+        {
+          "text": "Nash Equilibrium assumes players are rational, while Level-k assumes they are all irrational.",
+          "isCorrect": false,
+          "rationale": "Level-k players are still 'decision-theoretically rational' in that they best-respond to their beliefs; their beliefs are simply limited."
+        },
+        {
+          "text": "Nash Equilibrium is a steady-state where beliefs are correct, while Level-k models limited strategic inference in novel situations.",
+          "isCorrect": true,
+          "rationale": "Level-k captures the 'puzzling through' process when players haven't yet learned what others will actually do."
+        },
+        {
+          "text": "Level-k only applies to games with a single player, while Nash requires multiple players.",
+          "isCorrect": false,
+          "rationale": "Both are models of strategic interaction involving multiple agents."
+        },
+        {
+          "text": "Nash Equilibrium requires common knowledge of payoffs, while Level-k does not.",
+          "isCorrect": false,
+          "rationale": "Both typically assume payoffs are known; the key difference is the depth of the recursive 'I think that you think' reasoning."
+        }
+      ],
+      "hint": "Think about the role of 'correct beliefs' and 'learning' in these two models."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "Nash Equilibrium",
+      "Level-k Model",
+      "Beauty Contest Game",
+      "Mixed-Strategy Equilibrium",
+      "Cursed Equilibrium",
+      "Winner's Curse",
+      "Strategic-Form Games"
+    ],
+    "followUp": [
+      "Subgame-Perfect Nash Equilibrium",
+      "Adverse Selection and Moral Hazard",
+      "Iterated Deletion of Dominated Strategies",
+      "Experimental Economics in Field vs Lab",
+      "Bayesian Nash Equilibrium"
+    ]
+  }
+}

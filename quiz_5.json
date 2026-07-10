@@ -1,0 +1,283 @@
+
+{
+  "quiz": [
+    {
+      "question": "In the context of the simple laboratory experiments discussed, what distinguishes the 'dictator' from the 'recipient' in a Dictator Game?",
+      "answerOptions": [
+        {
+          "text": "The dictator chooses the division of a prize, while the recipient is entirely passive.",
+          "isCorrect": true,
+          "rationale": "In the standard Dictator Game, Player 1 (the dictator) unilaterally decides the allocation $(x_1, x_2)$, and Player 2 has no moves."
+        },
+        {
+          "text": "The dictator can reject the recipient's proposed division, resulting in zero payoffs for both.",
+          "isCorrect": false,
+          "rationale": "This description refers to the Responder's role in an Ultimatum Game, not the Dictator Game."
+        },
+        {
+          "text": "The recipient must agree to the dictator's terms for the payoff to be implemented.",
+          "isCorrect": false,
+          "rationale": "If the recipient had to agree, the game would be an Ultimatum Game rather than a Dictator Game."
+        },
+        {
+          "text": "The dictator and recipient engage in a bilateral market negotiation to reach a split.",
+          "isCorrect": false,
+          "rationale": "The Dictator Game is a non-strategic, one-sided allocation task rather than a market negotiation."
+        }
+      ],
+      "hint": "Consider which player has the power to make a decision and if the other player can respond."
+    },
+    {
+      "question": "According to the utility model $u_1(x_1, x_2)$, what weights characterize a 'Utilitarian' individual?",
+      "answerOptions": [
+        {
+          "text": "$\\rho = \\sigma = \\frac{1}{2}$",
+          "isCorrect": true,
+          "rationale": "A Utilitarian values their own payoff and the other player's payoff equally, regardless of who is ahead."
+        },
+        {
+          "text": "$\\rho = \\sigma = 0$",
+          "isCorrect": false,
+          "rationale": "Setting both weights to zero describes a purely self-interested individual who places no value on the other's payoff."
+        },
+        {
+          "text": "$\\rho = 1, \\sigma = 0$",
+          "isCorrect": false,
+          "rationale": "This configuration describes a Rawlsian preference, focusing on the minimum payoff in the pair."
+        },
+        {
+          "text": "$1 > \\rho \\ge \\sigma \\ge 0$",
+          "isCorrect": false,
+          "rationale": "This general range describes Social-Welfare preferences where the weight on others may vary based on relative status."
+        }
+      ],
+      "hint": "Think about how much weight an individual would place on another's happiness if they viewed all payoffs as having equal value."
+    },
+    {
+      "question": "Which set of parameters for $\\rho$ and $\\sigma$ defines an 'Inequality-Averse' individual in the distributional preference model?",
+      "answerOptions": [
+        {
+          "text": "$1 \\ge \\rho \\ge 0 > \\sigma$",
+          "isCorrect": true,
+          "rationale": "Inequality aversion implies being pro-social when ahead (positive $\\rho$) but feeling spiteful or envious when behind (negative $\\sigma$)."
+        },
+        {
+          "text": "$0 \\ge \\rho \\ge \\sigma$",
+          "isCorrect": false,
+          "rationale": "This describes an Envious or Competitive individual who consistently wants to lower the other person's payoff relative to their own."
+        },
+        {
+          "text": "$\\rho = \\sigma = 0$",
+          "isCorrect": false,
+          "rationale": "This represents pure self-interest, which is indifferent to the level of inequality as long as one's own payoff is maximized."
+        },
+        {
+          "text": "$\\rho \\ge \\sigma \\ge 0$",
+          "isCorrect": false,
+          "rationale": "This represents Social-Welfare preferences, which are generally pro-social even when the individual is behind."
+        }
+      ],
+      "hint": "Recall how the individual feels specifically when they have less than the other player."
+    },
+    {
+      "question": "What did Lazear, Malmendier, and Weber (2011) discover regarding subjects who gave significantly in a standard Dictator Game when given the chance to 'opt out'?",
+      "answerOptions": [
+        {
+          "text": "The biggest givers in the standard game were the ones most likely to drop out.",
+          "isCorrect": true,
+          "rationale": "The study suggests that many high-givers share out of a dislike for not giving rather than a positive joy in giving."
+        },
+        {
+          "text": "Anyone who shared in the standard game continued to share when sorting was allowed.",
+          "isCorrect": false,
+          "rationale": "The share of people sharing fell significantly, as many who would have shared chose to opt out instead."
+        },
+        {
+          "text": "Subjects only opted out if they intended to share zero in the first place.",
+          "isCorrect": false,
+          "rationale": "Actually, many zero-givers chose to stay and give nothing, while givers used the opt-out to avoid the social pressure of sharing."
+        },
+        {
+          "text": "Opting out had no significant impact on the average amount shared.",
+          "isCorrect": false,
+          "rationale": "The average amount shared fell from €1.87 to €0.58, indicating a massive shift in behavior."
+        }
+      ],
+      "hint": "Consider the difference between giving because you enjoy it versus giving because you feel obligated."
+    },
+    {
+      "question": "In the study by Dana, Weber, and Kuang (2007) on 'moral wiggle room,' what happened to pro-social behavior when responsibility for a selfish outcome was diffused among multiple dictators?",
+      "answerOptions": [
+        {
+          "text": "The percentage of pro-social choices dropped from $74\\%$ to $65\\%$.",
+          "isCorrect": true,
+          "rationale": "Diffusing responsibility allows individuals to 'hide' their selfishness from themselves, reducing pro-social choices."
+        },
+        {
+          "text": "The percentage of pro-social choices increased due to social pressure.",
+          "isCorrect": false,
+          "rationale": "Social pressure typically requires clear individual accountability, which was removed in the diffuse responsibility treatment."
+        },
+        {
+          "text": "Subjects became $100\\%$ selfish as soon as they weren't the sole decision-maker.",
+          "isCorrect": false,
+          "rationale": "While pro-sociality dropped, it did not disappear entirely; $65\\%$ still chose the selfish action, but it wasn't $100\\%$."
+        },
+        {
+          "text": "The subjects' choices remained identical to the standard Dictator Game.",
+          "isCorrect": false,
+          "rationale": "The experiment showed that behavior is sensitive to how the final distribution is arrived at, specifically the ability to hide intentions."
+        }
+      ],
+      "hint": "Think about how individuals react when they are no longer the sole person to blame for a selfish outcome."
+    },
+    {
+      "question": "Which of the following best describes the neoclassical theory prediction for the Ultimatum Game?",
+      "answerOptions": [
+        {
+          "text": "The Proposer offers the smallest possible amount, and the Responder accepts it.",
+          "isCorrect": true,
+          "rationale": "Neoclassical theory assumes players are purely self-interested, meaning any amount greater than zero is better than nothing for the Responder."
+        },
+        {
+          "text": "Both players receive zero because the Responder will reject any unfair split.",
+          "isCorrect": false,
+          "rationale": "This describes empirical findings of rejection behavior, but not the neoclassical theoretical prediction of rational self-interest."
+        },
+        {
+          "text": "The Proposer offers exactly $50\\%$ of the pie to ensure acceptance.",
+          "isCorrect": false,
+          "rationale": "While a $50\\%$ split is the modal empirical offer, it is not predicted by neoclassical theory, which ignores fairness."
+        },
+        {
+          "text": "The Responder will reject any offer below $30\\%$ to maintain social norms.",
+          "isCorrect": false,
+          "rationale": "Standard neoclassical theory does not account for social norms or the desire to punish 'unfair' behavior."
+        }
+      ],
+      "hint": "Consider what a 'rational' individual would do if they only cared about maximizing their own absolute monetary payoff."
+    },
+    {
+      "question": "How did the cross-cultural study by Henrich et al. (2004) characterize the 'Lamalera' group in the Ultimatum Game?",
+      "answerOptions": [
+        {
+          "text": "They were subsistence whale-hunters who made high average offers of around $57\\%$.",
+          "isCorrect": true,
+          "rationale": "The high offers reflected the group's highly cooperative culture, necessitated by their dangerous and collective hunting methods."
+        },
+        {
+          "text": "They were cassava farmers who made the lowest offers of any group studied.",
+          "isCorrect": false,
+          "rationale": "This description fits the Machiguenga, who were outliers on the low-giving end of the spectrum."
+        },
+        {
+          "text": "They were competitive gift-givers who frequently rejected even generous offers.",
+          "isCorrect": false,
+          "rationale": "This behavior was characteristic of the Gnau and Au groups, where gifts can carry burdensome social obligations."
+        },
+        {
+          "text": "They followed neoclassical predictions perfectly, offering nearly zero.",
+          "isCorrect": false,
+          "rationale": "The Lamalera were actually significant outliers in the opposite direction, offering more than the typical $50\\%$."
+        }
+      ],
+      "hint": "Recall the relationship between the group's economic survival strategy and their sharing behavior."
+    },
+    {
+      "question": "In the experiment by Falk and Szech (2013), how did the 'multilateral market' environment affect the subjects' willingness to save the life of a mouse for money?",
+      "answerOptions": [
+        {
+          "text": "Subjects were significantly more willing to kill the mouse in the market settings compared to individual choices.",
+          "isCorrect": true,
+          "rationale": "Market environments tend to erode social or moral concerns compared to individual decision-making settings."
+        },
+        {
+          "text": "The market setting had no effect on the ethical decisions of the participants.",
+          "isCorrect": false,
+          "rationale": "The study specifically highlighted a 'gruesome result' where market interactions decreased the value placed on the life of the mouse."
+        },
+        {
+          "text": "Pro-social behavior increased in the market because subjects were being watched by others.",
+          "isCorrect": false,
+          "rationale": "While social pressure can increase pro-sociality, market competition in this study actually had the opposite effect."
+        },
+        {
+          "text": "The bilateral market was the most ethical setting, with the lowest kill rates.",
+          "isCorrect": false,
+          "rationale": "Individual choices resulted in the lowest kill rates; both bilateral and multilateral markets increased the willingness to kill."
+        }
+      ],
+      "hint": "Think about whether market competition generally strengthens or weakens individual moral constraints."
+    },
+    {
+      "question": "Based on the DellaVigna, List, and Malmendier (2012) field experiment, what is the estimated 'cost' to a household of having to say 'no' to a solicitor in person?",
+      "answerOptions": [
+        {
+          "text": "$\\$3.56$",
+          "isCorrect": true,
+          "rationale": "The researchers derived this value from how much people were willing to pay or avoid in order to 'opt out' of the donation request."
+        },
+        {
+          "text": "$\\$10.00$",
+          "isCorrect": false,
+          "rationale": "This value was mentioned in other contexts (like the mouse life study) but not as the social pressure cost in the Chicago fundraiser."
+        },
+        {
+          "text": "$\\$0.58$",
+          "isCorrect": false,
+          "rationale": "This was the average amount shared in the sorting treatment of the Lazear study, not the social cost of saying no."
+        },
+        {
+          "text": "$\\$20.00$",
+          "isCorrect": false,
+          "rationale": "This was the size of the prize in the hiding selfishness study, not the estimated cost of social pressure."
+        }
+      ],
+      "hint": "This value represents the psychological burden or social pressure associated with refusing a request directly."
+    },
+    {
+      "question": "In the 'mini ultimatum game' conducted by Falk, Fehr, and Fischbacher (2003), how did Responders react when the Proposer chose $(8, 2)$ over an alternative of $(5, 5)$?",
+      "answerOptions": [
+        {
+          "text": "Rejection rates for the $(8, 2)$ offer rose to $44\\%$.",
+          "isCorrect": true,
+          "rationale": "Responders punished the Proposer for choosing an unfair allocation when a perfectly fair alternative $(5, 5)$ was available."
+        },
+        {
+          "text": "The rejection rate dropped to $8.9\\%$ because any money is better than nothing.",
+          "isCorrect": false,
+          "rationale": "This drop occurred when the alternative was $(10, 0)$, as the Proposer's choice of $(8, 2)$ was seen as relatively kind."
+        },
+        {
+          "text": "Responders accepted the $(8, 2)$ offer $100\\%$ of the time.",
+          "isCorrect": false,
+          "rationale": "Rejection rates were highly sensitive to intentions; they did not vanish when the alternative was fair."
+        },
+        {
+          "text": "The rejection rate remained constant at the baseline level of $18\\%$.",
+          "isCorrect": false,
+          "rationale": "The study proved that intentions matter; the rejection rate changed significantly based on what the Proposer could have chosen."
+        }
+      ],
+      "hint": "Consider how you would feel if someone chose to give you a small amount when they had the option to give you exactly half."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "The Dictator Game",
+      "Distributional Preferences",
+      "Social Pressure and Opting Out",
+      "The Ultimatum Game",
+      "Experimental Evidence on Social Preferences",
+      "Cross-Cultural Behavioral Economics"
+    ],
+    "followUp": [
+      "The Theory of Moral Sentiments vs Wealth of Nations",
+      "Intentions-Based Utility Models",
+      "Self-Selection and Sorting in Economic Experiments",
+      "The Role of Moral Wiggle Room in Pro-sociality",
+      "Ethics and Markets in Behavioral Economics"
+    ]
+  }
+}
+
